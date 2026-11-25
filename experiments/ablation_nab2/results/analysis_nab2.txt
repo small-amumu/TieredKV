@@ -1,0 +1,269 @@
+nab2_analyze.py md5 db47c7d6
+{
+ "qwen3_0p6b": {
+  "ours_median_kl": 0.001980658503775282,
+  "kivi2_median_kl": 0.118930117085355,
+  "x2r": {
+   "median_ratio_vs_ours": 33.83049420848286,
+   "n_above_1": 64,
+   "n": 64,
+   "median_kl": 0.06755544542372688
+  },
+  "lam0": {
+   "median_ratio_vs_ours": 1.0871743856288743,
+   "n_above_1": 45,
+   "n": 64,
+   "median_kl": 0.002151520865802054
+  },
+  "konly": {
+   "median_ratio_vs_ours": 9.385562459916901,
+   "n_above_1": 64,
+   "n": 64,
+   "median_kl": 0.017512083612961075
+  },
+  "kivi4": {
+   "median_ratio_vs_ours": 1.0764603748402277,
+   "n_above_1": 35,
+   "n": 64,
+   "median_kl": 0.0018705500058813582
+  },
+  "x2r_vs_kivi2_median_ratio": 0.5704055343235581,
+  "bits_median": {
+   "kivi128": [
+    2.5611648011496797,
+    2.5611648011496797,
+    0.0
+   ],
+   "kivi128k64_x2s128_j50_h54": [
+    2.5611648011496797,
+    2.718442243869663,
+    4.75
+   ],
+   "kivi128k64_x2r128_j50_h54": [
+    2.5611648011496797,
+    2.718442243869663,
+    4.75
+   ],
+   "kivi128k64_x2s128_h54": [
+    2.5611648011496797,
+    2.718442243869663,
+    4.75
+   ],
+   "kivi128k64_x2s128_j50_h5n": [
+    2.5611648011496797,
+    2.6731250146113625,
+    2.625
+   ],
+   "kivi4b128": [
+    4.515904466436998,
+    4.515904466436998,
+    0.0
+   ]
+  },
+  "answer_median": {
+   "kivi128": {
+    "kl": 0.0690094166685876,
+    "argmax_agree": 0.934734332053079
+   },
+   "kivi128k64_x2s128_j50_h54": {
+    "kl": 0.0008802208064455884,
+    "argmax_agree": 0.9925649530127142
+   },
+   "kivi128k64_x2r128_j50_h54": {
+    "kl": 0.045340898928271055,
+    "argmax_agree": 0.9504178501201661
+   },
+   "kivi128k64_x2s128_h54": {
+    "kl": 0.0010140567703559574,
+    "argmax_agree": 0.9939379480780053
+   },
+   "kivi128k64_x2s128_j50_h5n": {
+    "kl": 0.010600950996007795,
+    "argmax_agree": 0.9738415285827244
+   },
+   "kivi4b128": {
+    "kl": 0.0011311319150752869,
+    "argmax_agree": 0.9940063430629469
+   }
+  }
+ },
+ "qwen3_1p7b": {
+  "ours_median_kl": 0.002658455356490081,
+  "kivi2_median_kl": 0.1594549320629325,
+  "x2r": {
+   "median_ratio_vs_ours": 31.3004299693563,
+   "n_above_1": 64,
+   "n": 64,
+   "median_kl": 0.08324897760055278
+  },
+  "lam0": {
+   "median_ratio_vs_ours": 1.0512462901473407,
+   "n_above_1": 38,
+   "n": 64,
+   "median_kl": 0.002806403515181562
+  },
+  "konly": {
+   "median_ratio_vs_ours": 8.187462011769643,
+   "n_above_1": 64,
+   "n": 64,
+   "median_kl": 0.021558005978470494
+  },
+  "kivi4": {
+   "median_ratio_vs_ours": 0.8466948702918022,
+   "n_above_1": 23,
+   "n": 64,
+   "median_kl": 0.002254173221609506
+  },
+  "x2r_vs_kivi2_median_ratio": 0.5511225185192837,
+  "bits_median": {
+   "kivi128": [
+    2.5218707332539507,
+    2.5218707332539507,
+    0.0
+   ],
+   "kivi128k64_x2s128_j50_h54": [
+    2.5218707332539507,
+    2.6592651406346777,
+    4.75
+   ],
+   "kivi128k64_x2r128_j50_h54": [
+    2.5218707332539507,
+    2.6592651406346777,
+    4.75
+   ],
+   "kivi128k64_x2s128_h54": [
+    2.5218707332539507,
+    2.6592651406346777,
+    4.75
+   ],
+   "kivi128k64_x2s128_j50_h5n": [
+    2.5218707332539507,
+    2.6196769215588747,
+    2.625
+   ],
+   "kivi4b128": [
+    4.482325899326103,
+    4.482325899326103,
+    0.0
+   ]
+  },
+  "answer_median": {
+   "kivi128": {
+    "kl": 0.04937999466857021,
+    "argmax_agree": 0.9529837251356239
+   },
+   "kivi128k64_x2s128_j50_h54": {
+    "kl": 0.0006502069438274879,
+    "argmax_agree": 0.9946140035906643
+   },
+   "kivi128k64_x2r128_j50_h54": {
+    "kl": 0.03355081330413135,
+    "argmax_agree": 0.9631410256410257
+   },
+   "kivi128k64_x2s128_h54": {
+    "kl": 0.0007032878581886098,
+    "argmax_agree": 0.9951923076923077
+   },
+   "kivi128k64_x2s128_j50_h5n": {
+    "kl": 0.007647748444472512,
+    "argmax_agree": 0.9826923076923076
+   },
+   "kivi4b128": {
+    "kl": 0.0008189237341823469,
+    "argmax_agree": 0.99581589958159
+   }
+  }
+ },
+ "qwen3_4b": {
+  "ours_median_kl": 0.0009775718271420868,
+  "kivi2_median_kl": 0.07667795003770515,
+  "x2r": {
+   "median_ratio_vs_ours": 46.06843538710871,
+   "n_above_1": 64,
+   "n": 64,
+   "median_kl": 0.04338502892068731
+  },
+  "lam0": {
+   "median_ratio_vs_ours": 1.1565412933613106,
+   "n_above_1": 50,
+   "n": 64,
+   "median_kl": 0.0011266148628526196
+  },
+  "konly": {
+   "median_ratio_vs_ours": 10.143049286919473,
+   "n_above_1": 64,
+   "n": 64,
+   "median_kl": 0.009981344579330542
+  },
+  "kivi4": {
+   "median_ratio_vs_ours": 1.2289910073838646,
+   "n_above_1": 43,
+   "n": 64,
+   "median_kl": 0.0012336072156504028
+  },
+  "x2r_vs_kivi2_median_ratio": 0.563233700425503,
+  "bits_median": {
+   "kivi128": [
+    2.5392928808013266,
+    2.5392928808013266,
+    0.0
+   ],
+   "kivi128k64_x2s128_j50_h54": [
+    2.5392928808013266,
+    2.6855023969676495,
+    4.75
+   ],
+   "kivi128k64_x2r128_j50_h54": [
+    2.5392928808013266,
+    2.6855023969676495,
+    4.75
+   ],
+   "kivi128k64_x2s128_h54": [
+    2.5392928808013266,
+    2.6855023969676495,
+    4.75
+   ],
+   "kivi128k64_x2s128_j50_h5n": [
+    2.5392928808013266,
+    2.643374231292607,
+    2.625
+   ],
+   "kivi4b128": [
+    4.497213916321133,
+    4.497213916321133,
+    0.0
+   ]
+  },
+  "answer_median": {
+   "kivi128": {
+    "kl": 0.02261680242399037,
+    "argmax_agree": 0.9694216331951107
+   },
+   "kivi128k64_x2s128_j50_h54": {
+    "kl": 0.00025889455310782036,
+    "argmax_agree": 0.9968536571705318
+   },
+   "kivi128k64_x2r128_j50_h54": {
+    "kl": 0.016989921588393023,
+    "argmax_agree": 0.9748240675580577
+   },
+   "kivi128k64_x2s128_h54": {
+    "kl": 0.00033989238254744457,
+    "argmax_agree": 0.9963987967897106
+   },
+   "kivi128k64_x2s128_j50_h5n": {
+    "kl": 0.0033034906238308816,
+    "argmax_agree": 0.9899499209230276
+   },
+   "kivi4b128": {
+    "kl": 0.000414692460521526,
+    "argmax_agree": 0.9969065052411368
+   }
+  }
+ }
+}
+R1 (random candidates): selection is a main source  | per model: qwen3_0p6b selection is a main source, qwen3_1p7b selection is a main source, qwen3_4b selection is a main source
+R2 (lam = 0): mixed  | per model: qwen3_0p6b mixed, qwen3_1p7b mixed, qwen3_4b mixed
+R3 (key-only): value correction material  | per model: qwen3_0p6b value correction material, qwen3_1p7b value correction material, qwen3_4b value correction material
+R4 (KIVI-4 ruler): not shown  | per model: qwen3_0p6b not shown, qwen3_1p7b not shown, qwen3_4b not shown
+x2r and lam0 keep the deployed arm's GPU bits, reads and host bits; h5n keeps its GPU bits and has fewer host bits. Report every ratio with bits_median.

@@ -1,0 +1,252 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 The TieredKV Authors
+"""sel29_q (rootcause, round VFL, 2026-11-18): sel28_q plus PREDICT - VERIFY - FILL, registered in REG_VFL.md.
+
+The speculative-decoding structure applied to the host residual fetch. At decode step (query row) t:
+  predict  P = top C rows of the base attention weights of row t - lag (history as sel27_q's _lg), fetched ahead of
+           time (off the critical path), plus the compressed rows that were still in the exact window at row
+           t - lag (their exact values are on the GPU when they leave the window: no fetch);
+  verify   T = R's own candidates of row t (top M of row t's base weights, computed on the GPU as R does anyway);
+  fill     U = T \\ P are the misses; up to b of them are fetched synchronously (on the critical path), chosen by
+           the order o; F = the filled rows;
+  use      only rows of T whose residuals are present, A = T & (P | F). Rows of P that are not in T are NOT used
+           (so that b >= |U| reproduces R bit for bit: the asynchronous fetch changes latency, not the result).
+           Stage 2 (K value rows) is chosen among A. Rows of T \\ A fall back by f.
+Suffix after a plain x2s<M> _h<rk><rv> name: _vf<lag>c<C>b<b><o><f>
+  lag >= 1, C >= 1, b >= 0;
+  o: w = base weight of row t (R's own criterion: the zero-cost proxy), r = random (seeded per layer and row
+     chunk), e = oracle error contribution c1_j * (|ds_j| * |v_j| + |dv_j|) from the host residuals (a ceiling,
+     not implementable: it reads host data);
+  f: k = keep the 2-bit base for unfilled misses (ours), d = drop them from attention (what methods without a
+     GPU-resident base must do with a miss; every other row keeps its 2-bit base, so only the misses differ).
+Statistics per layer over the scored rows, STATS27 layout: [|T&P|, |T|, mass(T&P), mass(T), rows x KV heads, |F|,
+|T \\ A|, |P|]; mass = R's base weight of the row (mean over the GQA group).
+Byte accounting (alias): R's per-step host bytes; the prefetched / filled row counts come from the statistics.
+Everything else is sel28_q / sel27_q / sel25_q, reached through this module unchanged.
+"""
+from __future__ import annotations
+
+import re
+
+import torch
+
+import sel28_q as Q28
+
+Q27, Q25 = Q28.Q27, Q28.Q25
+Q19, Q17, Q14, Q13, S12, S10, S4 = Q25.Q19, Q25.Q17, Q25.Q14, Q25.Q13, Q25.S12, Q25.S10, Q25.S4
+Q5 = S4.Q5
+if getattr(S4, "_sel29_installed", False):
+    raise RuntimeError("sel29_q imported twice")
+S4._sel29_installed = True
+SUF29 = re.compile(r"(.+)_vf([1-9]\d*)c([1-9]\d*)b(0|[1-9]\d*)([wre])([kd])$")
+KINDS29 = ("vf",)
+OCALLS = Q25.OCALLS
+OCALLS.update({"vf": 0})
+STATS27 = Q27.STATS27
+DEBUG29: dict = {"on": False}
+ZS = Q25.ZS
+MAXLAG = 64
+POS = Q28.POS
+KINDS28 = Q28.KINDS28
+
+
+def strip29(name):
+    """(core, (lag, C, b, order, fallback)) for a sel29 name, else (name, None)."""
+    m = SUF29.fullmatch(name) if name else None
+    if not m or int(m[2]) > MAXLAG:
+        return name, None
+    return m[1], (int(m[2]), int(m[3]), int(m[4]), m[5], m[6])
+
+
+def alias(name):
+    c, p = strip29(name)
+    return f"{c}_r0" if p else Q28.alias(name)
+
+
+def strip28(name):
+    return (strip29(name)[0], None, 0) if strip29(name)[1] else Q28.strip28(name)
+
+
+def strip19(name):
+    c, p = strip29(name)
+    return (c, "vf") if p else Q28.strip19(name)
+
+
+def strip22(name):
+    return Q25.strip22(alias(name))
+
+
+def strip(name):
+    return Q25.strip(alias(name))
+
+
+def core(name):
+    return Q25.core(alias(name))
+
+
+def split(name):
+    return Q25.split(alias(name)) if name else None
+
+
+def parse(name):
+    return Q25.parse(alias(name))
+
+
+def host_bits(name, d):
+    return Q25.host_bits(alias(name), d)
+
+
+def eff_bits(name, L, d, g=1):
+    return Q25.eff_bits(alias(name), L, d, g)
+
+
+def sketch_bits(name, d):
+    return Q25.sketch_bits(alias(name), d)
+
+
+def _topmask(score, n):
+    """bool mask of the top n finite entries along the last axis (no filler for fewer finite entries)."""
+    if n <= 0:
+        return torch.zeros_like(score, dtype=torch.bool)
+    idx = score.topk(min(n, score.shape[-1]), -1).indices
+    return torch.zeros_like(score, dtype=torch.bool).scatter_(-1, idx, True) & torch.isfinite(score)
+
+
+def _attend_v(q, k, v, li, name, scale, kw, rk, rv, prm):
+    """sel25_q._attend_t's _r0 path with predict - verify - fill (module docstring)."""
+    if S4.DIAG["on"]:
+        raise RuntimeError("sel29_q: DIAG is not implemented")
+    lag, C, b, order, fb = prm
+    p_ = S4.parse(name)
+    if p_["lam"] or p_["crit"][:2] != "2s" or not p_["K"]:
+        raise ValueError(f"{name}: VFL needs x2s<M>, K > 0, lam = 0")
+    kq, vq, R, _ = S4.Q5.base("kivi128", k, v, li)
+    z = ZS
+    kq[:, :z], vq[:, :z] = k[:, :z], v[:, :z]
+    kh = k if rk >= 16 else kq + Q14._res(k - kq, rk)
+    vh = v if rv >= 16 else vq + Q14._res(v - vq, rv)
+    K, M = p_["K"], int(p_["crit"][2:])
+    H_, Lq, _ = q.shape
+    KVH, Lk = k.shape[:2]
+    g = H_ // KVH
+    kx, vx, kqx, vqx, khx, vhx = (t.repeat_interleave(g, 0) for t in (k, v, kq, vq, kh, vh))
+    if order == "e":                                   # oracle: per-row value residual norm and base value norm
+        dvn = (vh - vq).norm(dim=-1)                   # [KVH, Lk]
+        vn = vq.norm(dim=-1)
+    out = torch.empty(H_, Lq, v.shape[-1], device=q.device)
+    kpos = torch.arange(Lk, device=q.device)[None, :]
+    softcap, win_ = kw.get("softcap"), kw.get("sliding_window")
+    pf = S4.PREFILL["from"] if S4.PREFILL["on"] else 0
+    T_ = lag                                           # history rows needed before a row
+    if pf and Lk - Lq > pf - T_:
+        raise RuntimeError(f"{name}: the call starts after PREFILL from - lag: scored rows would lack history")
+    carry = None
+    st = STATS27.setdefault(li, torch.zeros(8, dtype=torch.float64, device=q.device))
+
+    for r0 in range(0, Lq, S4.CHUNK["rows"]):
+        r1 = min(Lq, r0 + S4.CHUNK["rows"])
+        n = r1 - r0
+        if Lk - Lq + r1 <= pf - T_:                      # dense prefill and not needed as history
+            out[:, r0:r1] = 0
+            Q25.SKIPPED["n"] += 1
+            continue
+        qpos = torch.arange(Lk - Lq + r0, Lk - Lq + r1, device=q.device)[:, None]
+        al = kpos <= qpos
+        if win_:
+            al &= kpos > qpos - int(win_)
+
+        def fin(s):
+            if softcap:
+                s = torch.tanh(s / softcap) * softcap
+            return torch.softmax(s.masked_fill(~al, float("-inf")), -1)
+
+        qr = q[:, r0:r1]
+        s_base = torch.einsum("hqd,hkd->hqk", qr, kqx) * scale
+        se = torch.einsum("hqd,hkd->hqk", qr, kx) * scale
+        sh = torch.einsum("hqd,hkd->hqk", qr, khx) * scale
+        ex = ((kpos >= (qpos + 1) // R * R) & al)[None].expand_as(s_base) | (kpos < z)[None]
+        ex = ex & al[None]
+        s = torch.where(ex, se, s_base)
+        bad = ~al[None] | ex
+        w_all = fin(s)
+        c1 = w_all.masked_fill(bad, -float("inf")).reshape(KVH, g, n, Lk).mean(1)
+        badk = bad[::g]
+        T = _topmask(c1, M)                              # verify: R's candidates
+        hist = w_all.reshape(KVH, g, n, Lk).mean(1)
+        if carry is None:
+            carry = hist[:, :1].expand(-1, T_, -1)
+        ext = torch.cat([carry, hist], 1)
+        prior = ext[:, T_ - lag:T_ - lag + n]
+        carry = ext[:, ext.shape[1] - T_:].clone()
+        P = _topmask(prior.masked_fill(badk | ~(prior > 0), -float("inf")), C)   # predict (fetched ahead)
+        # free rows: compressed at row t but exact on the GPU at some row in [t - lag, t]. A row j <= t - lag is so
+        # iff it was in the exact window at row t - lag (j >= floor((t - lag + 1) / R) R); a row j > t - lag was
+        # written after t - lag, and every row is exact when it is written (the window always holds the current
+        # group), so its residual is computed on the GPU when its group is compressed. Union: one lower bound.
+        G = (kpos >= (qpos - lag + 1) // R * R)[None] & ~badk
+        P = P | G
+        U = T & ~P
+        if b > 0:
+            if order == "w":
+                sc_ = c1
+            elif order == "r":
+                gen = torch.Generator(device="cpu").manual_seed(1000003 * li + r0 + 7)
+                sc_ = torch.rand(c1.shape, generator=gen).to(c1.device)
+            else:
+                ds = (sh - s).abs().reshape(KVH, g, n, Lk).mean(1)
+                sc_ = c1 * (ds * vn[:, None, :] + dvn[:, None, :])
+            F = _topmask(sc_.masked_fill(~U, -float("inf")), b)
+        else:
+            F = torch.zeros_like(U)
+        A = T & (P | F)
+        miss = T & ~A
+        rows = (qpos[:, 0] >= pf)[None, :, None]
+        c1p = torch.where(torch.isfinite(c1), c1, torch.zeros_like(c1)).double()
+        st += torch.stack([(T & P & rows).sum().double(), (T & rows).sum().double(), (c1p * (T & P & rows)).sum(),
+                           (c1p * (T & rows)).sum(), (rows.sum() * KVH).double(), (F & rows).sum().double(),
+                           (miss & rows).sum().double(), (P & rows).sum().double()])
+        if DEBUG29["on"]:
+            DEBUG29.update(T=T.clone(), P=P.clone(), F=F.clone(), A=A.clone(), c1=c1.clone(), badk=badk.clone())
+        kc = A.repeat_interleave(g, 0) & ~bad
+        s1 = torch.where(kc, sh, s)
+        c2 = fin(s1).masked_fill(~kc, -float("inf")).reshape(KVH, g, n, Lk).mean(1)
+        m = torch.zeros_like(c2, dtype=torch.bool).scatter_(-1, c2.topk(min(K, Lk), -1).indices, True).repeat_interleave(g, 0)
+        m = m & kc
+        sf = torch.where(m | kc, sh, s)
+        if fb == "d":
+            mx = miss.repeat_interleave(g, 0)
+            keep_row = (al[None] & ~mx).any(-1, keepdim=True)      # never empty a row (only possible with a window)
+            sf = sf.masked_fill(mx & keep_row, -float("inf"))
+        OCALLS["vf"] += 1
+        pr = fin(sf)
+        o = (torch.einsum("hqk,hkd->hqd", pr, vqx) + torch.einsum("hqk,hkd->hqd", pr * ex, vx - vqx)
+             + torch.einsum("hqk,hkd->hqd", pr * m, vhx - vqx))
+        out[:, r0:r1] = o
+    return out
+
+
+def attend(q, k, v, li, name, scale, kw):
+    c, prm = strip29(name) if name else (name, None)
+    if prm is None:
+        return Q28.attend(q, k, v, li, name, scale, kw)
+    Q25._check(c + "_r0")
+    base, rk, rv, _ = Q14.split(c)
+
+    def inner(q_, k_, v_, li_, name_, scale_, kw_):
+        return _attend_v(q_, k_, v_, li_, name_, scale_, kw_, rk, rv, prm)
+
+    S4._attend = inner
+    try:
+        return Q13.attend(q, k, v, li, base, scale, kw)
+    finally:
+        S4._attend = Q14._s4_attend_inner
+
+
+position_mass, position_lists = Q28.position_mass, Q28.position_lists
+calib, calib_all = Q25.calib, Q25.calib_all
+RC, Q7, P11, P10, P9, P8, S0 = Q25.RC, Q25.Q7, Q25.P11, Q25.P10, Q25.P9, Q25.P8, Q25.S0
+PREFILL, CHUNK, ST, INFO, CLIP, VX, HCHECK = Q25.PREFILL, Q25.CHUNK, Q25.ST, Q25.INFO, Q25.CLIP, Q25.VX, Q25.HCHECK
+DCALLS, PCALLS, XCALLS = Q25.DCALLS, Q25.PCALLS, Q25.XCALLS
+STATS, SKIPPED = Q25.STATS, Q25.SKIPPED
+reset_stats, dump_stats, dump_stats22 = Q25.reset_stats, Q25.dump_stats, Q25.dump_stats22
+reset_stats27, dump_stats27 = Q27.reset_stats27, Q27.dump_stats27

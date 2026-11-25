@@ -1,0 +1,171 @@
+== Qwen3-0.6B [all] (merged_0p6b.json): 128 of 128 items analyzed (0 outside this group), skipped none; 44 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00216   0.00394  0.00094(103)   0.0018                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00287   0.00444  0.00136(103)   0.0026     1.40 [1.36,1.44] n=128      1.13 [1.11,1.16] n=44      -      -        -
+  h33                 104.0  0.316   0.00420   0.00539  0.00222(103)   0.0039     2.11 [2.00,2.23] n=128      1.38 [1.33,1.45] n=44      -      -        -
+  h32                  88.0  0.421   0.00742   0.00800  0.00402(103)   0.0073     3.78 [3.52,4.05] n=128      2.06 [1.97,2.18] n=44      -      -        -
+  sc_G1024_h32_75     132.1  0.131   0.00230   0.00436  0.00121(103)   0.0019     1.05 [1.04,1.06] n=128      1.12 [1.09,1.16] n=44  0.056  0.058     0.00
+  rnd_G1024_h32_75    132.1  0.131   0.00249   0.00469  0.00144(103)   0.0022     1.13 [1.11,1.14] n=128      1.20 [1.17,1.23] n=44  0.109  0.112     0.00
+  sc_G1024_2lvl       113.9  0.251   0.00312   0.00694  0.00236(103)   0.0029     1.33 [1.28,1.39] n=128      1.77 [1.65,1.94] n=44  0.055  0.052     1.78
+  h44                 136.0  0.105   0.00243   0.00416  0.00109(103)   0.0021     1.15 [1.14,1.18] n=128      1.06 [1.04,1.08] n=44      -      -        -
+  h53                 136.0  0.105   0.00260   0.00424  0.00122(103)   0.0023     1.25 [1.22,1.28] n=128      1.08 [1.06,1.10] n=44      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.94 [0.93,0.95] n=128  long 0.93 [0.92,0.95] n=44  bytes 132.1 vs 132.1  a>b in 0.04
+  pair sc_G1024_h32_75/h33: decode 0.50 [0.47,0.53] n=128  long 0.81 [0.79,0.83] n=44  bytes 132.1 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.90 [0.89,0.92] n=128  long 0.95 [0.92,0.98] n=44
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 0.97 [0.96,0.98] n=128  long 1.02 [1.00,1.05] n=44
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 0.89 [0.85,0.92] n=91  long 1.16 [0.91,1.47] n=7
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-0.6B [short_L<2048] (merged_0p6b.json): 40 of 128 items analyzed (88 outside this group), skipped none; 0 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00121         -   0.00058(40)   0.0014                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00199         -   0.00111(40)   0.0021      1.67 [1.59,1.76] n=40                          -      -      -        -
+  h33                 104.0  0.316   0.00346         -   0.00200(40)   0.0036      2.92 [2.71,3.15] n=40                          -      -      -        -
+  h32                  88.0  0.421   0.00691         -   0.00388(40)   0.0070      5.84 [5.33,6.48] n=40                          -      -      -        -
+  sc_G1024_h32_75     149.1  0.019   0.00122         -   0.00069(40)   0.0014      1.00 [1.00,1.01] n=40                          -  0.013  0.013     0.00
+  rnd_G1024_h32_75    149.1  0.019   0.00123         -   0.00079(40)   0.0014      1.01 [1.01,1.02] n=40                          -  0.024  0.024     0.00
+  sc_G1024_2lvl       146.3  0.037   0.00126         -   0.00115(40)   0.0014      1.04 [1.02,1.06] n=40                          -  0.013  0.011     0.29
+  h44                 136.0  0.105   0.00151         -   0.00078(40)   0.0017      1.26 [1.21,1.30] n=40                          -      -      -        -
+  h53                 136.0  0.105   0.00168         -   0.00091(40)   0.0016      1.40 [1.35,1.46] n=40                          -      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.99 [0.98,1.00] n=40  long -  bytes 149.1 vs 149.1  a>b in 0.03
+  pair sc_G1024_h32_75/h33: decode 0.34 [0.32,0.37] n=40  long -  bytes 149.1 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.97 [0.96,0.98] n=40  long -
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 0.98 [0.97,0.99] n=40  long -
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 0.97 [0.96,0.99] n=40  long -
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-0.6B [long_L>=4096] (merged_0p6b.json): 50 of 128 items analyzed (78 outside this group), skipped none; 44 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00308   0.00394   0.00151(25)   0.0023                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00373   0.00444   0.00180(25)   0.0030      1.22 [1.20,1.25] n=50      1.13 [1.11,1.16] n=44      -      -        -
+  h33                 104.0  0.316   0.00494   0.00539   0.00266(25)   0.0041      1.63 [1.57,1.69] n=50      1.38 [1.33,1.45] n=44      -      -        -
+  h32                  88.0  0.421   0.00789   0.00800   0.00457(25)   0.0074      2.62 [2.52,2.74] n=50      2.06 [1.97,2.18] n=44      -      -        -
+  sc_G1024_h32_75     117.2  0.229   0.00335   0.00436   0.00184(25)   0.0025      1.09 [1.08,1.10] n=50      1.12 [1.09,1.16] n=44  0.087  0.090     0.00
+  rnd_G1024_h32_75    117.2  0.229   0.00367   0.00469   0.00217(25)   0.0029      1.20 [1.18,1.21] n=50      1.20 [1.17,1.23] n=44  0.172  0.176     0.00
+  sc_G1024_2lvl        85.4  0.438   0.00495   0.00694   0.00380(25)   0.0045      1.60 [1.54,1.67] n=50      1.77 [1.65,1.94] n=44  0.085  0.081     3.02
+  h44                 136.0  0.105   0.00332   0.00416   0.00158(25)   0.0026      1.08 [1.07,1.10] n=50      1.06 [1.04,1.08] n=44      -      -        -
+  h53                 136.0  0.105   0.00347   0.00424   0.00173(25)   0.0028      1.13 [1.12,1.15] n=50      1.08 [1.06,1.10] n=44      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.91 [0.90,0.92] n=50  long 0.93 [0.92,0.95] n=44  bytes 117.2 vs 117.2  a>b in 0.02
+  pair sc_G1024_h32_75/h33: decode 0.67 [0.65,0.69] n=50  long 0.81 [0.79,0.83] n=44  bytes 117.2 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.85 [0.84,0.86] n=50  long 0.95 [0.92,0.98] n=44
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 0.93 [0.92,0.95] n=50  long 1.02 [1.00,1.05] n=44
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 0.63 [0.57,0.70] n=13  long 1.16 [0.91,1.47] n=7
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-1.7B [all] (merged_1p7b.json): 128 of 128 items analyzed (0 outside this group), skipped none; 53 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00288   0.00436  0.00075(103)   0.0029                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00368   0.00507  0.00106(103)   0.0035     1.31 [1.28,1.35] n=128      1.17 [1.14,1.20] n=53      -      -        -
+  h33                 104.0  0.316   0.00507   0.00613  0.00146(103)   0.0049     1.83 [1.77,1.91] n=128      1.43 [1.36,1.50] n=53      -      -        -
+  h32                  88.0  0.421   0.00947   0.00982  0.00275(103)   0.0095     3.37 [3.16,3.60] n=128      2.25 [2.06,2.50] n=53      -      -        -
+  sc_G1024_h32_75     128.4  0.155   0.00307   0.00487  0.00099(103)   0.0031     1.06 [1.04,1.07] n=128      1.12 [1.09,1.15] n=53  0.066  0.068     0.00
+  rnd_G1024_h32_75    128.4  0.155   0.00335   0.00520  0.00114(103)   0.0033     1.15 [1.13,1.18] n=128      1.20 [1.16,1.25] n=53  0.134  0.136     0.00
+  sc_G1024_2lvl       106.8  0.297   0.00420   0.00778  0.00209(103)   0.0042     1.41 [1.35,1.48] n=128      1.80 [1.69,1.94] n=53  0.066  0.062     2.13
+  h44                 136.0  0.105   0.00315   0.00449  0.00083(103)   0.0031     1.11 [1.09,1.13] n=128      1.03 [1.01,1.05] n=53      -      -        -
+  h53                 136.0  0.105   0.00336   0.00488  0.00095(103)   0.0032     1.19 [1.16,1.21] n=128      1.12 [1.10,1.15] n=53      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.92 [0.90,0.93] n=128  long 0.93 [0.90,0.95] n=53  bytes 128.4 vs 128.4  a>b in 0.09
+  pair sc_G1024_h32_75/h33: decode 0.58 [0.55,0.60] n=128  long 0.78 [0.74,0.82] n=53  bytes 128.4 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.90 [0.88,0.91] n=128  long 0.92 [0.89,0.96] n=53
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 0.98 [0.96,0.99] n=128  long 0.99 [0.95,1.03] n=53
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 0.86 [0.80,0.92] n=86  long 0.93 [0.65,1.32] n=11
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-1.7B [short_L<2048] (merged_1p7b.json): 22 of 128 items analyzed (106 outside this group), skipped none; 0 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00206         -   0.00053(22)   0.0026                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00285         -   0.00084(22)   0.0031      1.43 [1.31,1.53] n=22                          -      -      -        -
+  h33                 104.0  0.316   0.00434         -   0.00129(22)   0.0050      2.18 [1.98,2.38] n=22                          -      -      -        -
+  h32                  88.0  0.421   0.00884         -   0.00238(22)   0.0096      4.39 [3.88,4.97] n=22                          -      -      -        -
+  sc_G1024_h32_75     146.4  0.037   0.00209         -   0.00069(22)   0.0026      1.02 [1.00,1.04] n=22                          -  0.026  0.027     0.00
+  rnd_G1024_h32_75    146.4  0.037   0.00215         -   0.00079(22)   0.0027      1.05 [1.02,1.08] n=22                          -  0.048  0.049     0.00
+  sc_G1024_2lvl       141.2  0.071   0.00247         -   0.00163(22)   0.0030      1.16 [1.06,1.32] n=22                          -  0.026  0.023     0.63
+  h44                 136.0  0.105   0.00236         -   0.00064(22)   0.0030      1.17 [1.09,1.25] n=22                          -      -      -        -
+  h53                 136.0  0.105   0.00247         -   0.00078(22)   0.0027      1.22 [1.15,1.30] n=22                          -      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.97 [0.95,0.99] n=22  long -  bytes 146.4 vs 146.4  a>b in 0.23
+  pair sc_G1024_h32_75/h33: decode 0.47 [0.43,0.51] n=22  long -  bytes 146.4 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.97 [0.95,0.99] n=22  long -
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 1.00 [0.97,1.02] n=22  long -
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 1.05 [0.96,1.21] n=22  long -
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-1.7B [long_L>=4096] (merged_1p7b.json): 55 of 128 items analyzed (73 outside this group), skipped none; 53 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00370   0.00436   0.00110(30)   0.0034                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00448   0.00507   0.00142(30)   0.0039      1.22 [1.19,1.25] n=55      1.17 [1.14,1.20] n=53      -      -        -
+  h33                 104.0  0.316   0.00578   0.00613   0.00180(30)   0.0053      1.58 [1.53,1.64] n=55      1.43 [1.36,1.50] n=53      -      -        -
+  h32                  88.0  0.421   0.00992   0.00982   0.00315(30)   0.0097      2.74 [2.59,2.89] n=55      2.25 [2.06,2.50] n=53      -      -        -
+  sc_G1024_h32_75     116.9  0.231   0.00401   0.00487   0.00138(30)   0.0038      1.09 [1.07,1.10] n=55      1.12 [1.09,1.15] n=53  0.086  0.088     0.00
+  rnd_G1024_h32_75    116.9  0.231   0.00442   0.00520   0.00156(30)   0.0041      1.20 [1.18,1.23] n=55      1.20 [1.16,1.25] n=53  0.176  0.179     0.00
+  sc_G1024_2lvl        84.8  0.442   0.00582   0.00778   0.00272(30)   0.0056      1.58 [1.51,1.66] n=55      1.80 [1.69,1.94] n=53  0.085  0.082     3.05
+  h44                 136.0  0.105   0.00393   0.00449   0.00116(30)   0.0036      1.07 [1.05,1.08] n=55      1.03 [1.01,1.05] n=53      -      -        -
+  h53                 136.0  0.105   0.00421   0.00488   0.00129(30)   0.0039      1.14 [1.12,1.16] n=55      1.12 [1.10,1.15] n=53      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.90 [0.88,0.92] n=55  long 0.93 [0.90,0.95] n=53  bytes 116.9 vs 116.9  a>b in 0.07
+  pair sc_G1024_h32_75/h33: decode 0.69 [0.66,0.71] n=55  long 0.78 [0.74,0.82] n=53  bytes 116.9 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.85 [0.83,0.87] n=55  long 0.92 [0.89,0.96] n=53
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 0.94 [0.92,0.96] n=55  long 0.99 [0.95,1.03] n=53
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 0.56 [0.48,0.66] n=13  long 0.93 [0.65,1.32] n=11
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-4B [all] (merged_4b.json): 128 of 128 items analyzed (0 outside this group), skipped none; 51 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00114   0.00207  0.00030(109)   0.0005                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00154   0.00244  0.00043(109)   0.0009     1.39 [1.35,1.43] n=128      1.19 [1.14,1.23] n=51      -      -        -
+  h33                 104.0  0.316   0.00215   0.00293  0.00060(109)   0.0015     1.97 [1.89,2.07] n=128      1.44 [1.38,1.50] n=51      -      -        -
+  h32                  88.0  0.421   0.00395   0.00469  0.00124(109)   0.0035     3.69 [3.49,3.92] n=128      2.29 [2.16,2.41] n=51      -      -        -
+  sc_G1024_h32_75     128.7  0.153   0.00123   0.00227  0.00038(109)   0.0006     1.07 [1.06,1.09] n=128      1.11 [1.07,1.14] n=51  0.038  0.038     0.00
+  rnd_G1024_h32_75    128.7  0.153   0.00150   0.00290  0.00051(109)   0.0009     1.28 [1.25,1.32] n=128      1.40 [1.35,1.46] n=51  0.226  0.228     0.00
+  sc_G1024_2lvl       107.3  0.294   0.00188   0.00409  0.00118(109)   0.0012     1.54 [1.47,1.61] n=128      1.96 [1.79,2.16] n=51  0.037  0.036     1.85
+  h44                 136.0  0.105   0.00125   0.00219  0.00034(109)   0.0006     1.10 [1.08,1.13] n=128      1.05 [1.03,1.07] n=51      -      -        -
+  h53                 136.0  0.105   0.00142   0.00233  0.00040(109)   0.0008     1.27 [1.24,1.31] n=128      1.14 [1.10,1.17] n=51      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.83 [0.82,0.85] n=128  long 0.79 [0.74,0.82] n=51  bytes 128.7 vs 128.7  a>b in 0.02
+  pair sc_G1024_h32_75/h33: decode 0.54 [0.52,0.57] n=128  long 0.77 [0.73,0.80] n=51  bytes 128.7 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.88 [0.87,0.90] n=128  long 0.89 [0.87,0.92] n=51
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 1.06 [1.04,1.08] n=128  long 1.14 [1.09,1.20] n=51
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 0.93 [0.88,0.98] n=87  long 1.19 [0.87,1.64] n=10
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-4B [short_L<2048] (merged_4b.json): 27 of 128 items analyzed (101 outside this group), skipped none; 0 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00075         -   0.00018(27)   0.0009                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00119         -   0.00032(27)   0.0014      1.61 [1.50,1.76] n=27                          -      -      -        -
+  h33                 104.0  0.316   0.00184         -   0.00050(27)   0.0020      2.51 [2.27,2.80] n=27                          -      -      -        -
+  h32                  88.0  0.421   0.00377         -   0.00113(27)   0.0038      5.21 [4.52,6.08] n=27                          -      -      -        -
+  sc_G1024_h32_75     146.4  0.037   0.00077         -   0.00025(27)   0.0009      1.02 [1.01,1.04] n=27                          -  0.016  0.016     0.00
+  rnd_G1024_h32_75    146.4  0.037   0.00080         -   0.00032(27)   0.0010      1.07 [1.03,1.11] n=27                          -  0.072  0.073     0.00
+  sc_G1024_2lvl       141.3  0.071   0.00087         -   0.00068(27)   0.0010      1.12 [1.06,1.21] n=27                          -  0.016  0.014     0.52
+  h44                 136.0  0.105   0.00087         -   0.00021(27)   0.0011      1.17 [1.12,1.22] n=27                          -      -      -        -
+  h53                 136.0  0.105   0.00107         -   0.00029(27)   0.0013      1.44 [1.34,1.55] n=27                          -      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.96 [0.93,0.98] n=27  long -  bytes 146.4 vs 146.4  a>b in 0.04
+  pair sc_G1024_h32_75/h33: decode 0.41 [0.36,0.45] n=27  long -  bytes 146.4 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.97 [0.95,1.00] n=27  long -
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 1.02 [0.99,1.05] n=27  long -
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 1.02 [0.96,1.09] n=27  long -
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity
+== Qwen3-4B [long_L>=4096] (merged_4b.json): 59 of 128 items analyzed (69 outside this group), skipped none; 51 items with decode positions >= 4096
+  WARNING: pair h32/h32c: one arm not in runs
+  bytes / w2 / Vlost: full decode span (thinking + answer); KL dec / long: thinking rows only
+  arm                 B/rec   save    KL dec   KL long     KL ans(n)     dNLL            x h54 dec [95%]                 x h54 long   w2cf     w2 Vlost/hr
+  h54                 152.0  0.000   0.00148   0.00207   0.00041(40)   0.0005                          -                          -  0.000  0.000     0.00
+  h43                 120.0  0.211   0.00188   0.00244   0.00053(40)   0.0009      1.29 [1.26,1.33] n=59      1.19 [1.14,1.23] n=51      -      -        -
+  h33                 104.0  0.316   0.00245   0.00293   0.00068(40)   0.0015      1.69 [1.62,1.78] n=59      1.44 [1.38,1.50] n=51      -      -        -
+  h32                  88.0  0.421   0.00426   0.00469   0.00132(40)   0.0034      2.95 [2.82,3.10] n=59      2.29 [2.16,2.41] n=51      -      -        -
+  sc_G1024_h32_75     117.6  0.226   0.00161   0.00227   0.00050(40)   0.0006      1.09 [1.07,1.11] n=59      1.11 [1.07,1.14] n=51  0.048  0.049     0.00
+  rnd_G1024_h32_75    117.6  0.226   0.00205   0.00290   0.00067(40)   0.0011      1.39 [1.36,1.43] n=59      1.40 [1.35,1.46] n=51  0.319  0.321     0.00
+  sc_G1024_2lvl        86.1  0.433   0.00261   0.00409   0.00164(40)   0.0016      1.76 [1.69,1.85] n=59      1.96 [1.79,2.16] n=51  0.047  0.047     2.68
+  h44                 136.0  0.105   0.00158   0.00219   0.00045(40)   0.0006      1.07 [1.05,1.08] n=59      1.05 [1.03,1.07] n=51      -      -        -
+  h53                 136.0  0.105   0.00178   0.00233   0.00050(40)   0.0008      1.22 [1.19,1.25] n=59      1.14 [1.10,1.17] n=51      -      -        -
+  pair sc_G1024_h32_75/rnd_G1024_h32_75: decode 0.78 [0.76,0.80] n=59  long 0.79 [0.74,0.82] n=51  bytes 117.6 vs 117.6  a>b in 0.00
+  pair sc_G1024_h32_75/h33: decode 0.65 [0.61,0.67] n=59  long 0.77 [0.73,0.80] n=51  bytes 117.6 vs 104.0  NOT equal bytes  a>b in 0.00
+  vs uniform frontier at equal bytes sc_G1024_h32_75: decode 0.82 [0.80,0.83] n=59  long 0.89 [0.87,0.92] n=51
+  vs uniform frontier at equal bytes rnd_G1024_h32_75: decode 1.04 [1.01,1.07] n=59  long 1.14 [1.09,1.20] n=51
+  vs uniform frontier at equal bytes sc_G1024_2lvl: decode 0.69 [0.61,0.77] n=18  long 1.19 [0.87,1.64] n=10
+  KL values floored at 1e-12 in x-h54 ratios: 0; intervals unadjusted for multiplicity

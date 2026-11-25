@@ -1,0 +1,32 @@
+B1c: 18/18 valid models
+R1 stk128 / matched RotateKV: median 0.284 [0.007, 0.454] (<= 1.0), lower 18/18 (need 14), one-sided Wilcoxon p 3.815e-06 -> HOLDS
+R2 worst model smol3_3b 0.987 (<= 1.25) -> HOLDS
+descriptive family level (8 families): median of family medians 0.467, families lower 8/8; falcon3 0.535, gemma2 0.510, granite 0.209, llama3 0.343, mistral 0.424, qwen2 0.007, smollm 0.718, yi 0.541
+descriptive float32 models: median 0.209, lower 13/13
+descriptive bfloat16 models: median 0.424, lower 5/5
+descriptive medians over valid models:
+  stk128 / kivi128: median 0.195, lower 17/18
+  rkv2 / kivi128: median 4.023, lower 0/18
+  rkv2w128 / kivi128: median 0.916, lower 10/18
+  rkv2w256 / kivi128: median 0.722, lower 10/18
+  rkv2 / rkv3: median 7.165, lower 3/18
+  gtqk22v20w128 / rkv2w256: median 0.380, lower 18/18
+per model: matched arm, stk128 / matched, GPU bits (ours, matched), flag (no RotateKV arm reaches our bits)
+  falcon3_3b     rkv2w256       0.585  bits 2.478 / 2.640  | D stk128=0.03145 kivi128=0.1029 rkv2=0.2273 rkv2w128=0.06465 rkv2w256=0.05373 rkv3=0.03023 gtqk22v20w128=0.02882
+  falcon3_7b     rkv2w256       0.484  bits 2.478 / 2.640  | D stk128=0.02162 kivi128=0.06566 rkv2=0.1679 rkv2w128=0.05385 rkv2w256=0.04465 rkv3=0.02341 gtqk22v20w128=0.01876
+  gemma2b        rkv2w256       0.510  bits 2.478 / 2.640  | D stk128=0.01508 kivi128=0.07161 rkv2=0.1864 rkv2w128=0.03774 rkv2w256=0.02956 rkv3=0.02169 gtqk22v20w128=0.01062
+  granite31_2b   rkv2w256       0.209  bits 2.970 / 3.001  | D stk128=0.03027 kivi128=0.204 rkv2=0.6048 rkv2w128=0.1856 rkv2w256=0.1451 rkv3=0.07171 gtqk22v20w128=0.05341
+  llama1b        rkv2w256       0.225  bits 2.970 / 3.001  | D stk128=0.03497 kivi128=0.2551 rkv2=0.8001 rkv2w128=0.1921 rkv2w256=0.1557 rkv3=0.08628 gtqk22v20w128=0.07916
+  llama3b        rkv2w256       0.383  bits 2.601 / 2.760  | D stk128=0.02234 kivi128=0.08599 rkv2=0.3528 rkv2w128=0.07327 rkv2w256=0.05826 rkv3=0.03876 gtqk22v20w128=0.02468
+  llama8b        rkv2w256       0.343  bits 2.601 / 2.760  | D stk128=0.01676 kivi128=0.06666 rkv2=0.2628 rkv2w128=0.06145 rkv2w256=0.04888 rkv3=0.02909 gtqk22v20w128=0.0192
+  mistral7b      rkv2w256       0.424  bits 2.601 / 2.760  | D stk128=0.01229 kivi128=0.05749 rkv2=0.1208 rkv2w128=0.03535 rkv2w256=0.02901 rkv3=0.01687 gtqk22v20w128=0.01338
+  q25_0p5b       rkv2w256       0.008  bits 2.970 / 3.001  | D stk128=0.03007 kivi128=0.3872 rkv2=4.224 rkv2w128=3.853 rkv2w256=3.818 rkv3=1.675 gtqk22v20w128=0.9107
+  q25_1p5b       rkv2w256       0.005  bits 2.601 / 2.760  | D stk128=0.02552 kivi128=0.1594 rkv2=7.629 rkv2w128=5.866 rkv2w256=5.408 rkv3=8.737 gtqk22v20w128=0.02554
+  q25_3b         rkv2w256       0.003  bits 2.601 / 2.760  | D stk128=0.02239 kivi128=0.1526 rkv2=7.218 rkv2w128=7.507 rkv2w256=7.452 rkv3=3.898 gtqk22v20w128=0.02374
+  q25_7b         rkv2w256       0.002  bits 2.601 / 2.760  | D stk128=0.01633 kivi128=0.08591 rkv2=7.154 rkv2w128=6.759 rkv2w256=6.757 rkv3=7.164 gtqk22v20w128=0.04265
+  q25m_1p5b      rkv2w256       0.007  bits 2.601 / 2.760  | D stk128=0.03852 kivi128=0.1933 rkv2=6.287 rkv2w128=6 rkv2w256=5.69 rkv3=6.744 gtqk22v20w128=0.04519
+  q2_0p5b        rkv2w256       0.012  bits 2.970 / 3.001  | D stk128=0.03432 kivi128=0.3029 rkv2=4.191 rkv2w128=3.123 rkv2w256=2.962 rkv3=2.385 gtqk22v20w128=1.077
+  r1q_1p5b       rkv2w256       0.007  bits 2.601 / 2.760  | D stk128=0.03938 kivi128=0.2084 rkv2=6.446 rkv2w128=6.44 rkv2w256=6.017 rkv3=6.304 gtqk22v20w128=0.03526
+  smol2_1p7b     rkv2w256       0.449  bits 2.970 / 3.001  | D stk128=0.02555 kivi128=0.1995 rkv2=0.3095 rkv2w128=0.07112 rkv2w256=0.05692 rkv3=0.05434 gtqk22v20w128=0.03137
+  smol3_3b       rkv2w256       0.987  bits 2.601 / 2.760  | D stk128=0.09241 kivi128=0.07186 rkv2=0.4139 rkv2w128=0.116 rkv2w256=0.09362 rkv3=0.04892 gtqk22v20w128=0.03728
+  yi15_6b        rkv2w256       0.541  bits 2.601 / 2.760  | D stk128=0.03179 kivi128=0.08823 rkv2=0.3193 rkv2w128=0.08032 rkv2w256=0.05872 rkv3=0.04069 gtqk22v20w128=0.0274

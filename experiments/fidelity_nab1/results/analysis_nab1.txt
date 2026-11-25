@@ -1,0 +1,43 @@
+== qwen3_0p6b: traces 64, 16-bit accuracy 62.5%, with </think> 50, ended 49, mean generated tokens 3900
+   replayed 64, valid 64 (non-finite KL: decode 0, answer 0), h2o budget held 58 (median L 3256), cut by max_len 0, answer span inside max_len 50, median L 3004, median h2o budget 536
+   kivi128                      GPU bits 2.561 (at peak window 2.854) host bits None host fetch/step 0 KiB | decode KL per-trace mean 0.121 median 0.1189 row-weighted 0.1183 | answer KL median 0.06901 | answer argmax agreement mean 0.9365, all-agree 0/50
+      buckets 0-1024:0.135(n64) 1024-2048:0.1178(n50) 2048-4096:0.1247(n35) 4096-8192:0.1046(n20)
+   kivi128k64_x2s128_j50_h54    GPU bits 2.561 (at peak window 2.854) host bits 4.75 host fetch/step 3304 KiB | decode KL per-trace mean 0.002028 median 0.001981 row-weighted 0.002681 | answer KL median 0.0008802 | answer argmax agreement mean 0.9924, all-agree 6/50
+      buckets 0-1024:0.001254(n64) 1024-2048:0.002238(n50) 2048-4096:0.003(n35) 4096-8192:0.00371(n20)
+   h2o                          GPU bits 2.856 (at peak window 2.856) host bits 0 host fetch/step nan KiB | decode KL per-trace mean 0.08407 median 0.07091 row-weighted 0.07658 | answer KL median 0.08357 | answer argmax agreement mean 0.9396, all-agree 0/50
+      buckets 0-1024:0.04096(n64) 1024-2048:0.06315(n50) 2048-4096:0.08167(n35) 4096-8192:0.1267(n20)
+   H1 ours vs base only [decode]: n 64 (no rows 0, dropped 0, ties 0), median ratio 0.01617, below 1 64/64, sign p 1.084e-19, supported True
+   H1 ours vs base only [answer]: n 50 (no rows 14, dropped 0, ties 0), median ratio 0.01276, below 1 50/50, sign p 1.776e-15, supported True
+   H2 ours vs eviction [decode]: n 58 (no rows 0, dropped 0, ties 0), median ratio 0.02941, below 1 58/58, sign p 6.939e-18, supported True
+   H2 ours vs eviction [answer]: n 44 (no rows 14, dropped 0, ties 0), median ratio 0.01192, below 1 44/44, sign p 1.137e-13, supported True
+   H2 (budget not held, descriptive) [decode]: n 6 (no rows 0, dropped 0, ties 0), median ratio 0.004927, below 1 6/6, sign p 0.03125, supported descriptive
+   H2 (budget not held, descriptive) [answer]: n 6 (no rows 0, dropped 0, ties 0), median ratio 0.002746, below 1 6/6, sign p 0.03125, supported descriptive
+== qwen3_1p7b: traces 64, 16-bit accuracy 75.0%, with </think> 53, ended 53, mean generated tokens 4162
+   replayed 64, valid 64 (non-finite KL: decode 0, answer 0), h2o budget held 64 (median L 3436), cut by max_len 0, answer span inside max_len 53, median L 3436, median h2o budget 596.5
+   kivi128                      GPU bits 2.522 (at peak window 2.778) host bits None host fetch/step 0 KiB | decode KL per-trace mean 0.1637 median 0.1595 row-weighted 0.1529 | answer KL median 0.04938 | answer argmax agreement mean 0.9507, all-agree 0/53
+      buckets 0-1024:0.2057(n64) 1024-2048:0.1523(n61) 2048-4096:0.1345(n41) 4096-8192:0.1232(n21)
+   kivi128k64_x2s128_j50_h54    GPU bits 2.522 (at peak window 2.778) host bits 4.75 host fetch/step 3304 KiB | decode KL per-trace mean 0.002807 median 0.002658 row-weighted 0.00327 | answer KL median 0.0006502 | answer argmax agreement mean 0.9938, all-agree 7/53
+      buckets 0-1024:0.001826(n64) 1024-2048:0.002983(n61) 2048-4096:0.003616(n41) 4096-8192:0.004295(n21)
+   h2o                          GPU bits 2.778 (at peak window 2.778) host bits 0 host fetch/step nan KiB | decode KL per-trace mean 0.1213 median 0.1174 row-weighted 0.1134 | answer KL median 0.08086 | answer argmax agreement mean 0.9564, all-agree 0/53
+      buckets 0-1024:0.04113(n64) 1024-2048:0.1269(n61) 2048-4096:0.1539(n41) 4096-8192:0.2099(n21)
+   H1 ours vs base only [decode]: n 64 (no rows 0, dropped 0, ties 0), median ratio 0.017, below 1 64/64, sign p 1.084e-19, supported True
+   H1 ours vs base only [answer]: n 53 (no rows 11, dropped 0, ties 0), median ratio 0.0146, below 1 53/53, sign p 2.22e-16, supported True
+   H2 ours vs eviction [decode]: n 64 (no rows 0, dropped 0, ties 0), median ratio 0.02426, below 1 64/64, sign p 1.084e-19, supported True
+   H2 ours vs eviction [answer]: n 53 (no rows 11, dropped 0, ties 0), median ratio 0.007239, below 1 53/53, sign p 2.22e-16, supported True
+   H2 (budget not held, descriptive) [decode]: n 0 (no rows 0, dropped 0, ties 0), median ratio nan, below 1 0/0, sign p nan, supported descriptive
+   H2 (budget not held, descriptive) [answer]: n 0 (no rows 0, dropped 0, ties 0), median ratio nan, below 1 0/0, sign p nan, supported descriptive
+== qwen3_4b: traces 64, 16-bit accuracy 81.2%, with </think> 58, ended 56, mean generated tokens 3991
+   replayed 64, valid 64 (non-finite KL: decode 0, answer 0), h2o budget held 64 (median L 3233), cut by max_len 0, answer span inside max_len 58, median L 3233, median h2o budget 568
+   kivi128                      GPU bits 2.539 (at peak window 2.812) host bits None host fetch/step 0 KiB | decode KL per-trace mean 0.08124 median 0.07668 row-weighted 0.07587 | answer KL median 0.02262 | answer argmax agreement mean 0.9668, all-agree 0/58
+      buckets 0-1024:0.09641(n64) 1024-2048:0.07397(n63) 2048-4096:0.06517(n42) 4096-8192:0.06081(n21)
+   kivi128k64_x2s128_j50_h54    GPU bits 2.539 (at peak window 2.812) host bits 4.75 host fetch/step 4248 KiB | decode KL per-trace mean 0.001119 median 0.0009776 row-weighted 0.001349 | answer KL median 0.0002589 | answer argmax agreement mean 0.9962, all-agree 12/58
+      buckets 0-1024:0.0006961(n64) 1024-2048:0.001129(n63) 2048-4096:0.001431(n42) 4096-8192:0.002105(n21)
+   h2o                          GPU bits 2.812 (at peak window 2.812) host bits 0 host fetch/step nan KiB | decode KL per-trace mean 0.09403 median 0.08914 row-weighted 0.09096 | answer KL median 0.06267 | answer argmax agreement mean 0.9608, all-agree 0/58
+      buckets 0-1024:0.02775(n64) 1024-2048:0.1042(n63) 2048-4096:0.128(n42) 4096-8192:0.1896(n21)
+   H1 ours vs base only [decode]: n 64 (no rows 0, dropped 0, ties 0), median ratio 0.01231, below 1 64/64, sign p 1.084e-19, supported True
+   H1 ours vs base only [answer]: n 58 (no rows 6, dropped 0, ties 0), median ratio 0.01206, below 1 58/58, sign p 6.939e-18, supported True
+   H2 ours vs eviction [decode]: n 64 (no rows 0, dropped 0, ties 0), median ratio 0.01144, below 1 64/64, sign p 1.084e-19, supported True
+   H2 ours vs eviction [answer]: n 58 (no rows 6, dropped 0, ties 0), median ratio 0.003937, below 1 58/58, sign p 6.939e-18, supported True
+   H2 (budget not held, descriptive) [decode]: n 0 (no rows 0, dropped 0, ties 0), median ratio nan, below 1 0/0, sign p nan, supported descriptive
+   H2 (budget not held, descriptive) [answer]: n 0 (no rows 0, dropped 0, ties 0), median ratio nan, below 1 0/0, sign p nan, supported descriptive
+H3 (descriptive) ours / eviction, decode KL, median paired ratio on budget-held items: qwen3_0p6b 0.02941 (n 58); qwen3_1p7b 0.02426 (n 64); qwen3_4b 0.01144 (n 64)

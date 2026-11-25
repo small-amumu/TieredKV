@@ -1,0 +1,69 @@
+== Qwen3-0.6B: 64 items, 23 reach the long bucket, 0 truncated, prompt median 71.0, L median 3003.5
+  score_G512_f0.75     long: w2 0.1484 c1 0.1171 demoted 0.6876 | all: w2 0.0962 n2 0.1111 n1 0.1270 demoted 0.5111
+  score_G512_f0.9      long: w2 0.2311 c1 0.2153 demoted 0.8236 | all: w2 0.1569 n2 0.1794 n1 0.2116 demoted 0.6120
+  score_G1024_f0.75    long: w2 0.1102 c1 0.0814 demoted 0.6251 | all: w2 0.0548 n2 0.0561 n1 0.0610 demoted 0.3179
+  score_G1024_f0.9     long: w2 0.1750 c1 0.1583 demoted 0.7488 | all: w2 0.0874 n2 0.0897 n1 0.1036 demoted 0.3806
+  score_G2048_f0.75    long: w2 0.0709 c1 0.0487 demoted 0.5002 | all: w2 0.0151 n2 0.0132 n1 0.0131 demoted 0.0686
+  score_G2048_f0.9     long: w2 0.1141 c1 0.0962 demoted 0.5992 | all: w2 0.0230 n2 0.0211 n1 0.0228 demoted 0.0821
+  random_G512_f0.75    long: w2 0.2787 c1 0.3364 demoted 0.6876 | all: w2 0.2016 n2 0.2080 n1 0.2520 demoted 0.5111
+  random_G512_f0.9     long: w2 0.3328 c1 0.4002 demoted 0.8236 | all: w2 0.2418 n2 0.2483 n1 0.3005 demoted 0.6120
+  random_G1024_f0.75   long: w2 0.2127 c1 0.2598 demoted 0.6251 | all: w2 0.1077 n2 0.1067 n1 0.1290 demoted 0.3179
+  random_G1024_f0.9    long: w2 0.2561 c1 0.3122 demoted 0.7488 | all: w2 0.1291 n2 0.1270 n1 0.1537 demoted 0.3806
+  random_G2048_f0.75   long: w2 0.1485 c1 0.1831 demoted 0.5002 | all: w2 0.0278 n2 0.0250 n1 0.0282 demoted 0.0686
+  random_G2048_f0.9    long: w2 0.1773 c1 0.2186 demoted 0.5992 | all: w2 0.0327 n2 0.0296 n1 0.0333 demoted 0.0821
+  oldest_G512_f0.75    long: w2 0.2819 c1 0.3372 demoted 0.6876 | all: w2 0.1996 n2 0.2101 n1 0.2523 demoted 0.5111
+  oldest_G512_f0.9     long: w2 0.3338 c1 0.4000 demoted 0.8236 | all: w2 0.2398 n2 0.2509 n1 0.3024 demoted 0.6120
+  oldest_G1024_f0.75   long: w2 0.2202 c1 0.2623 demoted 0.6251 | all: w2 0.1116 n2 0.1114 n1 0.1320 demoted 0.3179
+  oldest_G1024_f0.9    long: w2 0.2599 c1 0.3127 demoted 0.7488 | all: w2 0.1297 n2 0.1293 n1 0.1561 demoted 0.3806
+  oldest_G2048_f0.75   long: w2 0.1567 c1 0.1889 demoted 0.5002 | all: w2 0.0315 n2 0.0273 n1 0.0300 demoted 0.0686
+  oldest_G2048_f0.9    long: w2 0.1832 c1 0.2221 demoted 0.5992 | all: w2 0.0351 n2 0.0314 n1 0.0350 demoted 0.0821
+  pages P8_s1_long 1.7318 P8_s1_long_random 1.0775 P8_s1_all 2.2388 P8_s2_long 1.7142 P8_s2_long_random 1.0379 P8_s2_all 2.0058 P16_s1_long 2.2150 P16_s1_long_random 1.1703 P16_s1_all 3.1889 P16_s2_long 2.1448 P16_s2_long_random 1.0822 P16_s2_all 2.6815 P32_s1_long 2.9374 P32_s1_long_random 1.3693 P32_s1_all 4.8374 P32_s2_long 2.7597 P32_s2_long_random 1.1743 P32_s2_all 3.7933 P64_s1_long 4.0784 P64_s1_long_random 1.8177 P64_s1_all 7.7591 P64_s2_long 3.6464 P64_s2_long_random 1.3719 P64_s2_all 5.6868
+  churn 42.8441 of 128; union by bucket [0.969417651736082, 0.9545043854682984, 0.95104702700115, 0.9507701053160318]
+== Qwen3-1.7B: 64 items, 25 reach the long bucket, 0 truncated, prompt median 71.0, L median 3435.5
+  score_G512_f0.75     long: w2 0.1535 c1 0.1221 demoted 0.6854 | all: w2 0.1076 n2 0.1286 n1 0.1413 demoted 0.5393
+  score_G512_f0.9      long: w2 0.2308 c1 0.2225 demoted 0.8209 | all: w2 0.1718 n2 0.2055 n1 0.2398 demoted 0.6458
+  score_G1024_f0.75    long: w2 0.1149 c1 0.0861 demoted 0.6207 | all: w2 0.0605 n2 0.0694 n1 0.0767 demoted 0.3633
+  score_G1024_f0.9     long: w2 0.1694 c1 0.1613 demoted 0.7435 | all: w2 0.1002 n2 0.1147 n1 0.1327 demoted 0.4350
+  score_G2048_f0.75    long: w2 0.0778 c1 0.0556 demoted 0.4914 | all: w2 0.0248 n2 0.0259 n1 0.0261 demoted 0.1152
+  score_G2048_f0.9     long: w2 0.1231 c1 0.1130 demoted 0.5886 | all: w2 0.0396 n2 0.0423 n1 0.0459 demoted 0.1379
+  random_G512_f0.75    long: w2 0.2809 c1 0.3342 demoted 0.6854 | all: w2 0.2171 n2 0.2434 n1 0.2827 demoted 0.5393
+  random_G512_f0.9     long: w2 0.3382 c1 0.4045 demoted 0.8209 | all: w2 0.2605 n2 0.2922 n1 0.3393 demoted 0.6458
+  random_G1024_f0.75   long: w2 0.2111 c1 0.2573 demoted 0.6207 | all: w2 0.1327 n2 0.1387 n1 0.1620 demoted 0.3633
+  random_G1024_f0.9    long: w2 0.2530 c1 0.3127 demoted 0.7435 | all: w2 0.1598 n2 0.1658 n1 0.1946 demoted 0.4350
+  random_G2048_f0.75   long: w2 0.1591 c1 0.1945 demoted 0.4914 | all: w2 0.0547 n2 0.0507 n1 0.0562 demoted 0.1152
+  random_G2048_f0.9    long: w2 0.1877 c1 0.2325 demoted 0.5886 | all: w2 0.0651 n2 0.0608 n1 0.0673 demoted 0.1379
+  oldest_G512_f0.75    long: w2 0.2945 c1 0.3463 demoted 0.6854 | all: w2 0.2266 n2 0.2397 n1 0.2861 demoted 0.5393
+  oldest_G512_f0.9     long: w2 0.3394 c1 0.4024 demoted 0.8209 | all: w2 0.2635 n2 0.2872 n1 0.3421 demoted 0.6458
+  oldest_G1024_f0.75   long: w2 0.2165 c1 0.2646 demoted 0.6207 | all: w2 0.1404 n2 0.1432 n1 0.1667 demoted 0.3633
+  oldest_G1024_f0.9    long: w2 0.2539 c1 0.3125 demoted 0.7435 | all: w2 0.1612 n2 0.1686 n1 0.1975 demoted 0.4350
+  oldest_G2048_f0.75   long: w2 0.1625 c1 0.1970 demoted 0.4914 | all: w2 0.0563 n2 0.0544 n1 0.0590 demoted 0.1152
+  oldest_G2048_f0.9    long: w2 0.1940 c1 0.2309 demoted 0.5886 | all: w2 0.0677 n2 0.0626 n1 0.0688 demoted 0.1379
+  pages P8_s1_long 1.7817 P8_s1_long_random 1.0796 P8_s1_all 2.2054 P8_s2_long 1.7702 P8_s2_long_random 1.0389 P8_s2_all 1.9764 P16_s1_long 2.2878 P16_s1_long_random 1.1751 P16_s1_all 3.1135 P16_s2_long 2.2027 P16_s2_long_random 1.0844 P16_s2_all 2.6537 P32_s1_long 3.0525 P32_s1_long_random 1.3806 P32_s1_all 4.6590 P32_s2_long 2.8651 P32_s2_long_random 1.1793 P32_s2_all 3.6985 P64_s1_long 4.2642 P64_s1_long_random 1.8458 P64_s1_all 7.3702 P64_s2_long 3.8484 P64_s2_long_random 1.3833 P64_s2_all 5.3777
+  churn 43.8844 of 128; union by bucket [0.9657962469508986, 0.949741703850286, 0.9454472937334039, 0.9446025887895978]
+== Qwen3-4B: 64 items, 22 reach the long bucket, 0 truncated, prompt median 71.0, L median 3233.0
+  score_G512_f0.75     long: w2 0.0921 c1 0.0841 demoted 0.6831 | all: w2 0.0735 n2 0.1085 n1 0.1221 demoted 0.5268
+  score_G512_f0.9      long: w2 0.1425 c1 0.1508 demoted 0.8182 | all: w2 0.1155 n2 0.1761 n1 0.2125 demoted 0.6308
+  score_G1024_f0.75    long: w2 0.0698 c1 0.0612 demoted 0.6162 | all: w2 0.0418 n2 0.0598 n1 0.0670 demoted 0.3429
+  score_G1024_f0.9     long: w2 0.1082 c1 0.1147 demoted 0.7381 | all: w2 0.0667 n2 0.0993 n1 0.1203 demoted 0.4106
+  score_G2048_f0.75    long: w2 0.0509 c1 0.0409 demoted 0.4824 | all: w2 0.0156 n2 0.0208 n1 0.0218 demoted 0.0935
+  score_G2048_f0.9     long: w2 0.0801 c1 0.0817 demoted 0.5778 | all: w2 0.0262 n2 0.0353 n1 0.0398 demoted 0.1119
+  random_G512_f0.75    long: w2 0.4152 c1 0.4380 demoted 0.6831 | all: w2 0.3021 n2 0.2246 n1 0.2652 demoted 0.5268
+  random_G512_f0.9     long: w2 0.4956 c1 0.5206 demoted 0.8182 | all: w2 0.3607 n2 0.2689 n1 0.3178 demoted 0.6308
+  random_G1024_f0.75   long: w2 0.3677 c1 0.3858 demoted 0.6162 | all: w2 0.1849 n2 0.1358 n1 0.1587 demoted 0.3429
+  random_G1024_f0.9    long: w2 0.4305 c1 0.4516 demoted 0.7381 | all: w2 0.2287 n2 0.1625 n1 0.1900 demoted 0.4106
+  random_G2048_f0.75   long: w2 0.3088 c1 0.3196 demoted 0.4824 | all: w2 0.0587 n2 0.0476 n1 0.0527 demoted 0.0935
+  random_G2048_f0.9    long: w2 0.3648 c1 0.3766 demoted 0.5778 | all: w2 0.0722 n2 0.0576 n1 0.0633 demoted 0.1119
+  oldest_G512_f0.75    long: w2 0.4395 c1 0.4580 demoted 0.6831 | all: w2 0.3087 n2 0.2333 n1 0.2690 demoted 0.5268
+  oldest_G512_f0.9     long: w2 0.5044 c1 0.5353 demoted 0.8182 | all: w2 0.3576 n2 0.2735 n1 0.3214 demoted 0.6308
+  oldest_G1024_f0.75   long: w2 0.3949 c1 0.4056 demoted 0.6162 | all: w2 0.1914 n2 0.1372 n1 0.1595 demoted 0.3429
+  oldest_G1024_f0.9    long: w2 0.4382 c1 0.4643 demoted 0.7381 | all: w2 0.2266 n2 0.1669 n1 0.1935 demoted 0.4106
+  oldest_G2048_f0.75   long: w2 0.3438 c1 0.3501 demoted 0.4824 | all: w2 0.0616 n2 0.0498 n1 0.0548 demoted 0.0935
+  oldest_G2048_f0.9    long: w2 0.3811 c1 0.3919 demoted 0.5778 | all: w2 0.0792 n2 0.0591 n1 0.0645 demoted 0.1119
+  pages P8_s1_long 1.7415 P8_s1_long_random 1.0823 P8_s1_all 2.1784 P8_s2_long 1.6878 P8_s2_long_random 1.0401 P8_s2_all 1.9353 P16_s1_long 2.2222 P16_s1_long_random 1.1812 P16_s1_all 3.0783 P16_s2_long 2.0965 P16_s2_long_random 1.0873 P16_s2_all 2.5835 P32_s1_long 2.9459 P32_s1_long_random 1.3948 P32_s1_all 4.6066 P32_s2_long 2.6887 P32_s2_long_random 1.1855 P32_s2_all 3.5759 P64_s1_long 4.0745 P64_s1_long_random 1.8800 P64_s1_all 7.3300 P64_s2_long 3.5254 P64_s2_long_random 1.3976 P64_s2_all 5.2177
+  churn 42.5426 of 128; union by bucket [0.9672321952880195, 0.9495573496398104, 0.9455189152279485, 0.9447300996088405]
+G1 pass False -> T4 policy None (random also within threshold at this setting: None)
+  G512_f0.75: score_ok False oldest_ok False random_ok False beats True | Qwen3-0.6B w2 score 0.1484 oldest 0.2819 random 0.2787 c1 0.1171 demoted 0.6876 n=23; Qwen3-1.7B w2 score 0.1535 oldest 0.2945 random 0.2809 c1 0.1221 demoted 0.6854 n=25; Qwen3-4B w2 score 0.0921 oldest 0.4395 random 0.4152 c1 0.0841 demoted 0.6831 n=22
+  G512_f0.9: score_ok False oldest_ok False random_ok False beats True | Qwen3-0.6B w2 score 0.2311 oldest 0.3338 random 0.3328 c1 0.2153 demoted 0.8236 n=23; Qwen3-1.7B w2 score 0.2308 oldest 0.3394 random 0.3382 c1 0.2225 demoted 0.8209 n=25; Qwen3-4B w2 score 0.1425 oldest 0.5044 random 0.4956 c1 0.1508 demoted 0.8182 n=22
+  G1024_f0.75: score_ok False oldest_ok False random_ok False beats True | Qwen3-0.6B w2 score 0.1102 oldest 0.2202 random 0.2127 c1 0.0814 demoted 0.6251 n=23; Qwen3-1.7B w2 score 0.1149 oldest 0.2165 random 0.2111 c1 0.0861 demoted 0.6207 n=25; Qwen3-4B w2 score 0.0698 oldest 0.3949 random 0.3677 c1 0.0612 demoted 0.6162 n=22
+  G1024_f0.9: score_ok False oldest_ok False random_ok False beats True | Qwen3-0.6B w2 score 0.1750 oldest 0.2599 random 0.2561 c1 0.1583 demoted 0.7488 n=23; Qwen3-1.7B w2 score 0.1694 oldest 0.2539 random 0.2530 c1 0.1613 demoted 0.7435 n=25; Qwen3-4B w2 score 0.1082 oldest 0.4382 random 0.4305 c1 0.1147 demoted 0.7381 n=22
+G2 pass False: Qwen3-0.6B 2.2150 (random 1.1703, n=23); Qwen3-1.7B 2.2878 (random 1.1751, n=25); Qwen3-4B 2.2222 (random 1.1812, n=22)

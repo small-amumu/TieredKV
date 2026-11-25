@@ -1,0 +1,65 @@
+
+## l1_main: 16/16 valid models: exaone_1p2b gemma2b glm4_9b llama3b llama8b mistral7b phi4mini q25_0p5b q25_1p5b q25_7b q2_0p5b q35_4b q3_0p6b q3_1p7b q3_8b smol3_3b
+A1 residual rows / FP16 rows, about L1 bytes: median 0.523 [0.442, 0.586] (<= 0.8), lower 16/16 (need 12), p 1.526e-05 Holm 7.629e-05 -> HOLDS
+A2 two-stage / single-stage, same bytes: median 0.810 [0.794, 0.851] (<= 0.95), lower 15/16 (need 12), p 0.0001526 Holm 0.0001526 -> HOLDS
+A3 debias 50% / none: median 0.908 [0.890, 0.962] (<= 0.9), lower 15/16 (need 12), p 4.578e-05 Holm 9.155e-05 -> FAILS
+A4 full ladder / SpeCache-style, about L1 bytes: median 0.374 [0.314, 0.412] (<= 0.6), lower 16/16 (need 12), p 1.526e-05 Holm 7.629e-05 -> HOLDS
+A5 deployed h54 (45-48% of L1 bytes) / SpeCache-style: median 0.513 [0.453, 0.616] (<= 1.0), lower 16/16 (need 12), p 1.526e-05 Holm 7.629e-05 -> HOLDS
+descriptive J30 / L3: median 0.907, lower 15/16
+descriptive J30 / L4: median 0.996, lower 11/16
+descriptive identity arm / L1: median 5.45e-08, max 2.59e-01 (16 finite)
+descriptive: exact-attention selection / base selection (64 FP16 rows) median 2.305, base better in 16/16
+per model D (kivi128, kivi128k64_xqs, kivi128k120_x2s120_h88, kivi128k80_x2s160_h88, kivi128k80_x2s160_j50_h88, kivi128k64_x2s128_j50_h54, kivi128k64_xor, kivi128k80_x2s160_j30_h88, kivi128k64_x2s128_hff_id) and read KiB per KV head per step at the model's head_dim:
+  exaone_1p2b      0.3731 0.04838 0.04376 0.03765 0.03837 0.03633 0.07143 0.03896 4.73e-10  | KiB 0.0 16.0 15.9 15.9 15.9 7.8 16.0 15.9 0.0
+  gemma2b          0.07161 0.00143 0.0006327 0.0005038 0.0004849 0.001019 0.003165 0.0004598 2.166e-09  | KiB 0.0 64.0 60.9 60.9 60.9 28.8 64.0 60.9 0.0
+  glm4_9b          0.1269 0.007671 0.004064 0.003309 0.002803 0.003922 0.01486 0.002834 0.0007976  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  llama3b          0.08599 0.002247 0.001114 0.0008951 0.0008614 0.001309 0.005138 0.0008237 -3.533e-11  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  llama8b          0.06666 0.002473 0.001615 0.001455 0.001431 0.001724 0.004718 0.001422 0.0006396  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  mistral7b        0.05749 0.002387 0.001251 0.001053 0.0009611 0.001205 0.00432 0.0009513 0.0003013  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  phi4mini         0.0975 0.002833 0.0007961 0.0005203 0.0004674 0.0009603 0.006822 0.0004509 -2.378e-09  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  q25_0p5b         0.3872 0.01144 0.005534 0.004057 0.003591 0.004914 0.06521 0.003495 5.606e-10  | KiB 0.0 16.0 15.9 15.9 15.9 7.8 16.0 15.9 0.0
+  q25_1p5b         0.1594 0.01031 0.006911 0.00613 0.002101 0.002865 0.02463 0.002111 -1.498e-09  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  q25_7b           0.08591 0.004433 0.002536 0.002042 0.001846 0.00237 0.01033 0.001866 0.0007627  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  q2_0p5b          0.3029 0.01348 0.00587 0.004048 0.003166 0.004339 0.05635 0.003152 -7.922e-10  | KiB 0.0 16.0 15.9 15.9 15.9 7.8 16.0 15.9 0.0
+  q35_4b           0.09461 0.01232 0.007904 0.009367 0.009035 0.01094 0.01407 0.009155 7.397e-10  | KiB 0.0 64.0 60.9 60.9 60.9 28.8 64.0 60.9 0.0
+  q3_0p6b          0.2137 0.008309 0.003504 0.002781 0.002512 0.003763 0.02554 0.002507 -9.384e-10  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  q3_1p7b          0.1315 0.005317 0.0023 0.001874 0.001708 0.002463 0.01608 0.001706 1.109e-09  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  q3_8b            0.0824 0.004158 0.002288 0.001806 0.001608 0.002144 0.009662 0.001603 0.0008067  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  smol3_3b         0.07186 0.00229 0.001194 0.001016 0.0009436 0.001401 0.004425 0.0009348 -1.982e-11  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+
+## l1_held: 5/6 valid models: llama1b q25m_1p5b q35_2b r1q_1p5b stablelm2_1p6b
+  excluded (VOID rule): gemma3_1b: no output
+A1 residual rows / FP16 rows, about L1 bytes: median 0.488 [0.467, 0.548] (<= 0.8), lower 5/5 (need 4), p 0.03125 Holm 0.03125 -> HOLDS (count rule, no significance test)
+A2 two-stage / single-stage, same bytes: median 0.750 [0.707, 1.197] (<= 0.95), lower 4/5 (need 4), p 0.09375 Holm 0.09375 -> HOLDS (count rule, no significance test)
+A3 debias 50% / none: median 0.935 [0.773, 1.039] (<= 0.9), lower 4/5 (need 4), p 0.09375 Holm 0.09375 -> FAILS
+A4 full ladder / SpeCache-style, about L1 bytes: median 0.332 [0.267, 0.613] (<= 0.6), lower 5/5 (need 4), p 0.03125 Holm 0.03125 -> HOLDS (count rule, no significance test)
+A5 deployed h54 (45-48% of L1 bytes) / SpeCache-style: median 0.460 [0.374, 0.798] (<= 1.0), lower 5/5 (need 4), p 0.03125 Holm 0.03125 -> HOLDS (count rule, no significance test)
+descriptive J30 / L3: median 0.940, lower 5/5
+descriptive J30 / L4: median 0.971, lower 4/5
+descriptive identity arm / L1: median -4.08e-08, max 4.30e-08 (5 finite)
+descriptive: exact-attention selection / base selection (64 FP16 rows) median 3.095, base better in 5/5
+per model D (kivi128, kivi128k64_xqs, kivi128k120_x2s120_h88, kivi128k80_x2s160_h88, kivi128k80_x2s160_j50_h88, kivi128k64_x2s128_j50_h54, kivi128k64_xor, kivi128k80_x2s160_j30_h88, kivi128k64_x2s128_hff_id) and read KiB per KV head per step at the model's head_dim:
+  llama1b          0.2551 0.005744 0.002681 0.00191 0.001906 0.002642 0.0218 0.001796 -6.997e-10  | KiB 0.0 16.0 15.9 15.9 15.9 7.8 16.0 15.9 0.0
+  q25m_1p5b        0.1933 0.009712 0.004585 0.00344 0.00266 0.003717 0.03006 0.002624 4.18e-10  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  q35_2b           0.1089 0.009618 0.005271 0.006309 0.005896 0.007676 0.01122 0.006027 -2.938e-10  | KiB 0.0 64.0 60.9 60.9 60.9 28.8 64.0 60.9 0.0
+  r1q_1p5b         0.2084 0.01245 0.006076 0.004297 0.00332 0.004654 0.04064 0.003223 -5.074e-10  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  stablelm2_1p6b   0.1695 0.001834 0.0009944 0.0008317 0.0008645 0.001397 0.004427 0.000812 -1.973e-09  | KiB 0.0 16.0 15.9 15.9 15.9 7.8 16.0 15.9 0.0
+
+## l1_new: 7/7 valid models: falcon3_3b falcon3_7b granite31_2b olmo2_7b q25_3b smol2_1p7b yi15_6b
+A1 residual rows / FP16 rows, about L1 bytes: median 0.498 [0.430, 0.564] (<= 0.8), lower 7/7 (need 6), p 0.007812 Holm 0.007812 -> HOLDS (count rule, no significance test)
+A2 two-stage / single-stage, same bytes: median 0.818 [0.728, 0.892] (<= 0.95), lower 7/7 (need 6), p 0.007812 Holm 0.007812 -> HOLDS (count rule, no significance test)
+A3 debias 50% / none: median 0.927 [0.848, 0.964] (<= 0.9), lower 7/7 (need 6), p 0.007812 Holm 0.007812 -> FAILS
+A4 full ladder / SpeCache-style, about L1 bytes: median 0.395 [0.288, 0.467] (<= 0.6), lower 7/7 (need 6), p 0.007812 Holm 0.007812 -> HOLDS (count rule, no significance test)
+A5 deployed h54 (45-48% of L1 bytes) / SpeCache-style: median 0.533 [0.384, 0.800] (<= 1.0), lower 6/7 (need 6), p 0.01562 Holm 0.01562 -> HOLDS (count rule, no significance test)
+descriptive J30 / L3: median 0.916, lower 7/7
+descriptive J30 / L4: median 0.986, lower 6/7
+descriptive identity arm / L1: median 8.98e-07, max 1.51e-01 (7 finite)
+descriptive: exact-attention selection / base selection (64 FP16 rows) median 1.832, base better in 7/7
+per model D (kivi128, kivi128k64_xqs, kivi128k120_x2s120_h88, kivi128k80_x2s160_h88, kivi128k80_x2s160_j50_h88, kivi128k64_x2s128_j50_h54, kivi128k64_xor, kivi128k80_x2s160_j30_h88, kivi128k64_x2s128_hff_id) and read KiB per KV head per step at the model's head_dim:
+  falcon3_3b       0.1029 0.002111 0.001256 0.001121 0.001039 0.002386 0.003481 0.001038 1.895e-09  | KiB 0.0 64.0 60.9 60.9 60.9 28.8 64.0 60.9 0.0
+  falcon3_7b       0.06566 0.001909 0.001041 0.000846 0.0007863 0.001527 0.003497 0.0007749 0.0002133  | KiB 0.0 64.0 60.9 60.9 60.9 28.8 64.0 60.9 0.0
+  granite31_2b     0.204 0.00724 0.003114 0.002139 0.001809 0.002597 0.02503 0.001761 4.972e-11  | KiB 0.0 16.0 15.9 15.9 15.9 7.8 16.0 15.9 0.0
+  olmo2_7b         0.1439 0.007585 0.003777 0.003676 0.003544 0.004816 0.01318 0.003499 0.0002414  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  q25_3b           0.1526 0.007934 0.003709 0.002698 0.002287 0.003048 0.02023 0.002227 -1.179e-09  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0
+  smol2_1p7b       0.1995 0.003138 0.001285 0.001111 0.001097 0.001673 0.01029 0.001045 6.667e-10  | KiB 0.0 16.0 15.9 15.9 15.9 7.8 16.0 15.9 0.0
+  yi15_6b          0.08823 0.005842 0.003295 0.002696 0.002306 0.002943 0.01013 0.002347 0.0008818  | KiB 0.0 32.0 30.9 30.9 30.9 14.8 32.0 30.9 0.0

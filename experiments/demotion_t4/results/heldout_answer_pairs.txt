@@ -1,0 +1,15 @@
+== Qwen3-0.6B kv_heads 8 heads 16 truncated 1
+  sc_G1024_h32_75/rnd_G1024_h32_75 all      thinking 0.94 [0.93,0.95] n=128 | answer 0.85 [0.82,0.87] n=103
+  sc_G1024_h32_75/rnd_G1024_h32_75 L>=4096  thinking 0.91 [0.90,0.92] n=50 | answer 0.85 [0.80,0.89] n=25
+  sc_G1024_2lvl/h32 all      thinking 0.35 [0.32,0.39] n=128 | answer 0.49 [0.42,0.56] n=103
+  sc_G1024_2lvl/h32 L>=4096  thinking 0.61 [0.58,0.64] n=50 | answer 0.86 [0.75,0.98] n=25
+== Qwen3-1.7B kv_heads 8 heads 16 truncated 1
+  sc_G1024_h32_75/rnd_G1024_h32_75 all      thinking 0.92 [0.90,0.93] n=128 | answer 0.85 [0.83,0.88] n=103
+  sc_G1024_h32_75/rnd_G1024_h32_75 L>=4096  thinking 0.90 [0.88,0.92] n=55 | answer 0.87 [0.83,0.91] n=30
+  sc_G1024_2lvl/h32 all      thinking 0.42 [0.38,0.45] n=128 | answer 0.72 [0.66,0.78] n=103
+  sc_G1024_2lvl/h32 L>=4096  thinking 0.58 [0.55,0.61] n=55 | answer 0.85 [0.77,0.94] n=30
+== Qwen3-4B kv_heads 8 heads 32 truncated 1
+  sc_G1024_h32_75/rnd_G1024_h32_75 all      thinking 0.83 [0.82,0.85] n=128 | answer 0.76 [0.74,0.78] n=109
+  sc_G1024_h32_75/rnd_G1024_h32_75 L>=4096  thinking 0.78 [0.76,0.80] n=59 | answer 0.74 [0.72,0.77] n=40
+  sc_G1024_2lvl/h32 all      thinking 0.42 [0.38,0.46] n=128 | answer 0.80 [0.71,0.89] n=109
+  sc_G1024_2lvl/h32 L>=4096  thinking 0.60 [0.56,0.63] n=59 | answer 1.12 [1.01,1.28] n=40

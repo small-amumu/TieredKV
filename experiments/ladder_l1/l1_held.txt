@@ -1,0 +1,6 @@
+/var/tmp/work_panel/DeepSeek-R1-Distill-Qwen-1.5B r1q_1p5b float32 26
+/var/tmp/work_panel/Qwen2.5-Math-1.5B-Instruct q25m_1p5b float32 26
+/var/tmp/work_panel/stablelm-2-1_6b-chat stablelm2_1p6b float32 26
+/var/tmp/work_panel/gemma-3-1b-it gemma3_1b float32 22
+/var/tmp/work_panel/Llama-3.2-1B-Instruct llama1b float32 24
+/var/tmp/work_panel/Qwen3.5-2B q35_2b float32 28

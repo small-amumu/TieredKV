@@ -1,0 +1,32 @@
+B1a: 18/18 valid models
+G1 stk128 / matched Block-GTQ v3: median 0.912 [0.775, 1.104] (<= 1.0), lower 12/18 (need 14), one-sided Wilcoxon p 0.09073 -> FAILS
+G2 worst model smol3_3b 2.479 (<= 1.25) -> FAILS; above 1.25: gemma2b 1.419, smol3_3b 2.479
+descriptive family level (8 families): median of family medians 1.020, families lower 4/8; falcon3 1.122, gemma2 1.419, granite 0.567, llama3 0.873, mistral 0.919, qwen2 0.852, smollm 1.647, yi 1.160
+descriptive float32 models: median 0.905, lower 9/13
+descriptive bfloat16 models: median 0.919, lower 3/5
+descriptive medians over valid models:
+  stk128 / kivi128: median 0.195, lower 17/18
+  gtqk20v20w128 / kivi128: median 0.363, lower 16/18
+  gtqk22v20w128 / kivi128: median 0.283, lower 16/18
+  gtqk24v20w128 / kivi128: median 0.211, lower 16/18
+  gtqk28v20w128 / kivi128: median 0.147, lower 16/18
+  gtqk20v20w128 / gtqk28v20w128: median 2.198, lower 1/18
+per model: matched arm, stk128 / matched, GPU bits (ours, matched), flag (no Block-GTQ arm reaches our bits)
+  falcon3_3b     gtqk22v20w128  1.091  bits 2.478 / 2.492  | D stk128=0.03145 kivi128=0.1029 gtqk20v20w128=0.03435 gtqk22v20w128=0.02882 gtqk24v20w128=0.02556 gtqk28v20w128=0.0188
+  falcon3_7b     gtqk22v20w128  1.152  bits 2.478 / 2.498  | D stk128=0.02162 kivi128=0.06566 gtqk20v20w128=0.02392 gtqk22v20w128=0.01876 gtqk24v20w128=0.01636 gtqk28v20w128=0.01211
+  gemma2b        gtqk22v20w128  1.419  bits 2.478 / 2.505  | D stk128=0.01508 kivi128=0.07161 gtqk20v20w128=0.0128 gtqk22v20w128=0.01062 gtqk24v20w128=0.008793 gtqk28v20w128=0.007231
+  granite31_2b   gtqk22v20w128  0.567  bits 2.970 / 2.990  | D stk128=0.03027 kivi128=0.204 gtqk20v20w128=0.07376 gtqk22v20w128=0.05341 gtqk24v20w128=0.03965 gtqk28v20w128=0.02513
+  llama1b        gtqk24v20w128  0.697  bits 2.970 / 3.025  | D stk128=0.03497 kivi128=0.2551 gtqk20v20w128=0.1248 gtqk22v20w128=0.07916 gtqk24v20w128=0.05015 gtqk28v20w128=0.03352
+  llama3b        gtqk22v20w128  0.905  bits 2.601 / 2.662  | D stk128=0.02234 kivi128=0.08599 gtqk20v20w128=0.03278 gtqk22v20w128=0.02468 gtqk24v20w128=0.02033 gtqk28v20w128=0.0139
+  llama8b        gtqk22v20w128  0.873  bits 2.601 / 2.654  | D stk128=0.01676 kivi128=0.06666 gtqk20v20w128=0.02501 gtqk22v20w128=0.0192 gtqk24v20w128=0.01505 gtqk28v20w128=0.01036
+  mistral7b      gtqk22v20w128  0.919  bits 2.601 / 2.656  | D stk128=0.01229 kivi128=0.05749 gtqk20v20w128=0.01616 gtqk22v20w128=0.01338 gtqk24v20w128=0.01034 gtqk28v20w128=0.008174
+  q25_0p5b       gtqk22v20w128  0.033  bits 2.970 / 2.994  | D stk128=0.03007 kivi128=0.3872 gtqk20v20w128=4.158 gtqk22v20w128=0.9107 gtqk24v20w128=1.75 gtqk28v20w128=0.4307
+  q25_1p5b       gtqk22v20w128  0.999  bits 2.601 / 2.692  | D stk128=0.02552 kivi128=0.1594 gtqk20v20w128=0.03563 gtqk22v20w128=0.02554 gtqk24v20w128=0.02198 gtqk28v20w128=0.0156
+  q25_3b         gtqk22v20w128  0.943  bits 2.601 / 2.675  | D stk128=0.02239 kivi128=0.1526 gtqk20v20w128=0.03325 gtqk22v20w128=0.02374 gtqk24v20w128=0.02031 gtqk28v20w128=0.01448
+  q25_7b         gtqk22v20w128  0.383  bits 2.601 / 2.685  | D stk128=0.01633 kivi128=0.08591 gtqk20v20w128=0.04417 gtqk22v20w128=0.04265 gtqk24v20w128=0.02172 gtqk28v20w128=0.01059
+  q25m_1p5b      gtqk22v20w128  0.852  bits 2.601 / 2.692  | D stk128=0.03852 kivi128=0.1933 gtqk20v20w128=0.05019 gtqk22v20w128=0.04519 gtqk24v20w128=0.03686 gtqk28v20w128=0.02918
+  q2_0p5b        gtqk22v20w128  0.032  bits 2.970 / 2.971  | D stk128=0.03432 kivi128=0.3029 gtqk20v20w128=0.3879 gtqk22v20w128=1.077 gtqk24v20w128=2.596 gtqk28v20w128=5.675
+  r1q_1p5b       gtqk22v20w128  1.117  bits 2.601 / 2.684  | D stk128=0.03938 kivi128=0.2084 gtqk20v20w128=0.04198 gtqk22v20w128=0.03526 gtqk24v20w128=0.03086 gtqk28v20w128=0.02309
+  smol2_1p7b     gtqk22v20w128  0.814  bits 2.970 / 2.994  | D stk128=0.02555 kivi128=0.1995 gtqk20v20w128=0.03944 gtqk22v20w128=0.03137 gtqk24v20w128=0.02528 gtqk28v20w128=0.01844
+  smol3_3b       gtqk22v20w128  2.479  bits 2.601 / 2.631  | D stk128=0.09241 kivi128=0.07186 gtqk20v20w128=0.04669 gtqk22v20w128=0.03728 gtqk24v20w128=0.02931 gtqk28v20w128=0.0207
+  yi15_6b        gtqk22v20w128  1.160  bits 2.601 / 2.644  | D stk128=0.03179 kivi128=0.08823 gtqk20v20w128=0.03558 gtqk22v20w128=0.0274 gtqk24v20w128=0.02258 gtqk28v20w128=0.01725

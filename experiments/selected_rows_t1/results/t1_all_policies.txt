@@ -1,0 +1,63 @@
+== qwen3_0p6b: items 64 long 23 L_med 3003.5 churn 42.844
+  score_G512_f0.75     long w2 0.148 c1 0.117 dem 0.688 | all w2 0.096 dem 0.511
+  score_G512_f0.9      long w2 0.231 c1 0.215 dem 0.824 | all w2 0.157 dem 0.612
+  score_G1024_f0.75    long w2 0.110 c1 0.081 dem 0.625 | all w2 0.055 dem 0.318
+  score_G1024_f0.9     long w2 0.175 c1 0.158 dem 0.749 | all w2 0.087 dem 0.381
+  score_G2048_f0.75    long w2 0.071 c1 0.049 dem 0.500 | all w2 0.015 dem 0.069
+  score_G2048_f0.9     long w2 0.114 c1 0.096 dem 0.599 | all w2 0.023 dem 0.082
+  random_G512_f0.75    long w2 0.279 c1 0.336 dem 0.688 | all w2 0.202 dem 0.511
+  random_G512_f0.9     long w2 0.333 c1 0.400 dem 0.824 | all w2 0.242 dem 0.612
+  random_G1024_f0.75   long w2 0.213 c1 0.260 dem 0.625 | all w2 0.108 dem 0.318
+  random_G1024_f0.9    long w2 0.256 c1 0.312 dem 0.749 | all w2 0.129 dem 0.381
+  random_G2048_f0.75   long w2 0.149 c1 0.183 dem 0.500 | all w2 0.028 dem 0.069
+  random_G2048_f0.9    long w2 0.177 c1 0.219 dem 0.599 | all w2 0.033 dem 0.082
+  oldest_G512_f0.75    long w2 0.282 c1 0.337 dem 0.688 | all w2 0.200 dem 0.511
+  oldest_G512_f0.9     long w2 0.334 c1 0.400 dem 0.824 | all w2 0.240 dem 0.612
+  oldest_G1024_f0.75   long w2 0.220 c1 0.262 dem 0.625 | all w2 0.112 dem 0.318
+  oldest_G1024_f0.9    long w2 0.260 c1 0.313 dem 0.749 | all w2 0.130 dem 0.381
+  oldest_G2048_f0.75   long w2 0.157 c1 0.189 dem 0.500 | all w2 0.031 dem 0.069
+  oldest_G2048_f0.9    long w2 0.183 c1 0.222 dem 0.599 | all w2 0.035 dem 0.082
+  pages P8_s1_long 1.732 P8_s1_long_random 1.077 P8_s1_all 2.239 P8_s2_long 1.714 P8_s2_long_random 1.038 P8_s2_all 2.006 P16_s1_long 2.215 P16_s1_long_random 1.170 P16_s1_all 3.189 P16_s2_long 2.145 P16_s2_long_random 1.082 P16_s2_all 2.681 P32_s1_long 2.937 P32_s1_long_random 1.369 P32_s1_all 4.837 P32_s2_long 2.760 P32_s2_long_random 1.174 P32_s2_all 3.793 P64_s1_long 4.078 P64_s1_long_random 1.818 P64_s1_all 7.759 P64_s2_long 3.646 P64_s2_long_random 1.372 P64_s2_all 5.687
+  union_by_bucket [0.969417651736082, 0.9545043854682984, 0.95104702700115, 0.9507701053160318]
+== qwen3_1p7b: items 64 long 25 L_med 3435.5 churn 43.884
+  score_G512_f0.75     long w2 0.153 c1 0.122 dem 0.685 | all w2 0.108 dem 0.539
+  score_G512_f0.9      long w2 0.231 c1 0.223 dem 0.821 | all w2 0.172 dem 0.646
+  score_G1024_f0.75    long w2 0.115 c1 0.086 dem 0.621 | all w2 0.061 dem 0.363
+  score_G1024_f0.9     long w2 0.169 c1 0.161 dem 0.743 | all w2 0.100 dem 0.435
+  score_G2048_f0.75    long w2 0.078 c1 0.056 dem 0.491 | all w2 0.025 dem 0.115
+  score_G2048_f0.9     long w2 0.123 c1 0.113 dem 0.589 | all w2 0.040 dem 0.138
+  random_G512_f0.75    long w2 0.281 c1 0.334 dem 0.685 | all w2 0.217 dem 0.539
+  random_G512_f0.9     long w2 0.338 c1 0.405 dem 0.821 | all w2 0.260 dem 0.646
+  random_G1024_f0.75   long w2 0.211 c1 0.257 dem 0.621 | all w2 0.133 dem 0.363
+  random_G1024_f0.9    long w2 0.253 c1 0.313 dem 0.743 | all w2 0.160 dem 0.435
+  random_G2048_f0.75   long w2 0.159 c1 0.195 dem 0.491 | all w2 0.055 dem 0.115
+  random_G2048_f0.9    long w2 0.188 c1 0.232 dem 0.589 | all w2 0.065 dem 0.138
+  oldest_G512_f0.75    long w2 0.294 c1 0.346 dem 0.685 | all w2 0.227 dem 0.539
+  oldest_G512_f0.9     long w2 0.339 c1 0.402 dem 0.821 | all w2 0.264 dem 0.646
+  oldest_G1024_f0.75   long w2 0.216 c1 0.265 dem 0.621 | all w2 0.140 dem 0.363
+  oldest_G1024_f0.9    long w2 0.254 c1 0.313 dem 0.743 | all w2 0.161 dem 0.435
+  oldest_G2048_f0.75   long w2 0.162 c1 0.197 dem 0.491 | all w2 0.056 dem 0.115
+  oldest_G2048_f0.9    long w2 0.194 c1 0.231 dem 0.589 | all w2 0.068 dem 0.138
+  pages P8_s1_long 1.782 P8_s1_long_random 1.080 P8_s1_all 2.205 P8_s2_long 1.770 P8_s2_long_random 1.039 P8_s2_all 1.976 P16_s1_long 2.288 P16_s1_long_random 1.175 P16_s1_all 3.113 P16_s2_long 2.203 P16_s2_long_random 1.084 P16_s2_all 2.654 P32_s1_long 3.052 P32_s1_long_random 1.381 P32_s1_all 4.659 P32_s2_long 2.865 P32_s2_long_random 1.179 P32_s2_all 3.699 P64_s1_long 4.264 P64_s1_long_random 1.846 P64_s1_all 7.370 P64_s2_long 3.848 P64_s2_long_random 1.383 P64_s2_all 5.378
+  union_by_bucket [0.9657962469508986, 0.949741703850286, 0.9454472937334039, 0.9446025887895978]
+== qwen3_4b: items 64 long 22 L_med 3233.0 churn 42.543
+  score_G512_f0.75     long w2 0.092 c1 0.084 dem 0.683 | all w2 0.074 dem 0.527
+  score_G512_f0.9      long w2 0.143 c1 0.151 dem 0.818 | all w2 0.116 dem 0.631
+  score_G1024_f0.75    long w2 0.070 c1 0.061 dem 0.616 | all w2 0.042 dem 0.343
+  score_G1024_f0.9     long w2 0.108 c1 0.115 dem 0.738 | all w2 0.067 dem 0.411
+  score_G2048_f0.75    long w2 0.051 c1 0.041 dem 0.482 | all w2 0.016 dem 0.093
+  score_G2048_f0.9     long w2 0.080 c1 0.082 dem 0.578 | all w2 0.026 dem 0.112
+  random_G512_f0.75    long w2 0.415 c1 0.438 dem 0.683 | all w2 0.302 dem 0.527
+  random_G512_f0.9     long w2 0.496 c1 0.521 dem 0.818 | all w2 0.361 dem 0.631
+  random_G1024_f0.75   long w2 0.368 c1 0.386 dem 0.616 | all w2 0.185 dem 0.343
+  random_G1024_f0.9    long w2 0.430 c1 0.452 dem 0.738 | all w2 0.229 dem 0.411
+  random_G2048_f0.75   long w2 0.309 c1 0.320 dem 0.482 | all w2 0.059 dem 0.093
+  random_G2048_f0.9    long w2 0.365 c1 0.377 dem 0.578 | all w2 0.072 dem 0.112
+  oldest_G512_f0.75    long w2 0.439 c1 0.458 dem 0.683 | all w2 0.309 dem 0.527
+  oldest_G512_f0.9     long w2 0.504 c1 0.535 dem 0.818 | all w2 0.358 dem 0.631
+  oldest_G1024_f0.75   long w2 0.395 c1 0.406 dem 0.616 | all w2 0.191 dem 0.343
+  oldest_G1024_f0.9    long w2 0.438 c1 0.464 dem 0.738 | all w2 0.227 dem 0.411
+  oldest_G2048_f0.75   long w2 0.344 c1 0.350 dem 0.482 | all w2 0.062 dem 0.093
+  oldest_G2048_f0.9    long w2 0.381 c1 0.392 dem 0.578 | all w2 0.079 dem 0.112
+  pages P8_s1_long 1.741 P8_s1_long_random 1.082 P8_s1_all 2.178 P8_s2_long 1.688 P8_s2_long_random 1.040 P8_s2_all 1.935 P16_s1_long 2.222 P16_s1_long_random 1.181 P16_s1_all 3.078 P16_s2_long 2.096 P16_s2_long_random 1.087 P16_s2_all 2.584 P32_s1_long 2.946 P32_s1_long_random 1.395 P32_s1_all 4.607 P32_s2_long 2.689 P32_s2_long_random 1.186 P32_s2_all 3.576 P64_s1_long 4.075 P64_s1_long_random 1.880 P64_s1_all 7.330 P64_s2_long 3.525 P64_s2_long_random 1.398 P64_s2_all 5.218
+  union_by_bucket [0.9672321952880195, 0.9495573496398104, 0.9455189152279485, 0.9447300996088405]
