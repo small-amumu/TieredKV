@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # T4 run (A1 diagnostic or A2 full) of one model on one GPU; every arm of the model runs in this one process.
 # usage: t4_run.sh <root> <python> <gpu index> <model dir> <tag> <name> <arms,comma> [--diag8 | --items i,j,...]
 # Needs smoke/PASS_<tag> whose content equals the current FREEZE.md5 line (smoke passed on this exact code) and

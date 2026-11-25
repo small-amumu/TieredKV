@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kalign_opx = kalign_fr.py bfc8d073 + fixed residual row stride (RL / res_stride) + fused records written by the
 encoder (KRSB / VRSB / frec); make_kalign_opx.py (OPX engine fix, 2026-11-23). Defaults = kalign_fr bit for bit.
 kalign_fr = kalign.py f96b21f5 + fused host residual records (make_kalign_fr.py; RHR, 2026-11-19).

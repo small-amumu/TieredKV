@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Make kalign_opx.py from kalign_fr.py (md5 bfc8d073; RHR part C). Every edit is asserted. Engine fix round
 (OPX, issue 161):
   (1) fixed residual row stride: afix2A / afix2B take RL (residual record row stride, rows per (batch, KV head));

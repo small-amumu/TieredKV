@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """M0 parity: research attention methods inside vLLM vs. the research harness, same process.
 
 1. Hugging Face model (bf16) with the research attention: KIVI / main-line calibration on the

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kalign (TieredKV, kernel path aligned with the accuracy reference; 2026-11-07, v2: e4m3 bytes read directly, aligned
 encoder aenc_kernel; v1 passed kalign_check on Llama-3.2-3B, 28 layers x 3 lengths, median rel 3.9e-4, max 2.5e-3).
 The reference accuracy numbers come from cap_attn.attend over cap_codec bytes (arm stkm8v8128k64_x2s128_p50_h<kb><vb>).

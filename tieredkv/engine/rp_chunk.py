@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """chunked exact causal attention for long prefills (rp_engine E1; no heavy imports, so tests can import it alone)."""
 import torch
 

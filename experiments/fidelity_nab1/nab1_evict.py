@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Heavy-hitter KV eviction for teacher-forced replay (NAB1 eviction arm; H2O-style proxy, not R-KV).
 
 Rule, per KV head (GQA: scores summed over the head's query group):

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """s0_cov (rootcause fork; round S0, forward-only diagnostics, registered in reg_pkv.md before any output).
 One exact forward per sample (prefix + teacher-forced answer, lit protocol: the cache of the prefix is what is quantized);
 inside the attention of every layer, for the last R <= 64 rows (the answer rows) and the prefix keys outside the 4 sinks

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Tables of rp_cpu.py output (T3): numeric check, CPU throughput, round trips. Formatting only, no thresholds.
 usage: python -I -X utf8 t3_summary.py <out.md> <t3_*.jsonl> [<t3_*.jsonl> ...]
 A CPU row is marked INVALID when the id pool touched less than 2 x LLC (rows may come from cache) or fewer than 32

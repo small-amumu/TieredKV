@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # R1 (pro5000): the real engine E1 vs the accuracy reference and fp on the Table A protocol (X-0139 = tb_bench v3.7b TB_TF=1
 # TB_GOLD=1), LLaMA-2-7B-32K (MHA, linear RoPE x8), RULER 6 tasks @32768, items 0-9 (X-0139's items); one process per task.
 # Two task groups, one card each (pro5000 rule: at most two cards at once, any index, idle first):

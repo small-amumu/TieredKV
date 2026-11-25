@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T1 scorer (REG_T1.md v5 sections 3-4). Usage: python -I t1_analyze.py <out_dir> <lab json> x3
 
 Per (item, layer): pooled ratios of sums -> mean over layers -> median over items, per model.

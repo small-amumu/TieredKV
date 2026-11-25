@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kbench4: fourth-iteration layered-KV decode step (rootcause fork, exploratory). Same shapes and timing as kbench.py; three
 kernels plus one small torch.topk, optionally captured in a CUDA graph:
   base   split-L decode kernel on a planar-packed 2-bit KV cache: byte j of a token holds the codes of channels

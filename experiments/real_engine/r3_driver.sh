@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # R3 (pro5000): the real engine E1, free greedy generation as tb_bench v3.7 (rp_run.py --mode ruler), Llama-3.1-8B-Instruct,
 # RULER vt / fwe / qa_1 @130000 (X-0140's lc set), items 0-19, widths h33 and h54; one process per task.
 # Usage: bash r3_driver.sh <gpu 0-3> <task[,task...]> [formal|smoke]     smoke: cwe item 0 (cwe is outside R3: no spare items

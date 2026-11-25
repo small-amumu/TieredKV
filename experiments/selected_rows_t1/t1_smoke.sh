@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # T1 smoke (REG_T1.md v5 section 6 step 4) on STAR GPU0: Q0a on 0.6B item 0, then Q0a and the peak on the 4B longest
 # trace. On success writes smoke/gate_mib (4B peak reserved MiB + 1536) and smoke/PASS (md5 of FREEZE.md5 as it was
 # when the smoke started; FREEZE.md5 lists every T1 file, the stack modules and the inputs). Run in the foreground:

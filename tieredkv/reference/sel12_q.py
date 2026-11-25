@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel12_q (rootcause fork; round S1, capacity route): sel10_q's stack base with 8-bit metadata, so the GPU base drops from
 2.375 to 2.25 (m8) or 2.22 (sym8: keys 2.19, values 2.25) bits per element (mean over K and V) asymptotically, end to end through sel4_q's selection / two-stage fetch /
 debias. A method name is

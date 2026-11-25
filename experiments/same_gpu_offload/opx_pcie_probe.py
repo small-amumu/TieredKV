@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """OPX diagnostic (root cause of the PCIe excess; not registered, synthetic data, no accuracy):
 measures NVML PCIe RX bytes per decode step of the deployed kalign.StepA (M = 128 key rows, K = 64 value
 rows, Llama-3.1-8B shapes: 32 layers, 8 KV heads, 4 query heads per KV head, d 128, B = 1), one step of

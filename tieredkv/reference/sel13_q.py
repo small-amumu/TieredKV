@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel13_q (rootcause fork; diagnosis round D1, exploratory): sel12_q plus two controls.
 A method name is
   <name>_vx    the method <name> with every value exact: the base's value codes are replaced by the exact values before

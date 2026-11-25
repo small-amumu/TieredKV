@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kbench7 (rootcause fork): the kbench5 decode step with the main line's water-filled key base and an FP16 window, so the
 kernel implements the base whose accuracy rounds SC / P9-P12 measure (wfc_ck_w128_rc). kbench4 / kbench5 are imported
 read-only; new are the kernels that decode keys and window_kernel (exact FP16 window).

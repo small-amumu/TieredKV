@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel4_q (round S4, rootcause fork): sel3_q plus
   (1) the error variance computed per row chunk (CHUNK rows; long windows fit), (2) PREFILL["on"]: rows < PREFILL["from"]
       use exact attention for every method (dense prefill, as the published sparse-attention systems), (3) two-stage

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # Put the flat module directories of the library on PYTHONPATH. Usage, from anywhere:
 #   source tieredkv/env.sh
 # The modules import each other by bare name (import sel14_q, import kalign_opx), as they did on the

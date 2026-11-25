@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel28_q (rootcause, round SPD, 2026-11-18): sel27_q plus stage-1 candidates restricted to a PREDICTED POSITION SET,
 registered in REG_SPD.md.
 

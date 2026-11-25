@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """NAB1 read-off (REG_NAB1.md, with amendment A1): per model, the 16-bit trace summary, per-run summaries and the
 registered paired comparisons. Reads the trace files and the lab outputs; writes nothing but stdout.
 

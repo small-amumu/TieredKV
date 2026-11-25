@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # A2b on pro5000, one GPU, sequential per model: smoke on the held-out traces, then the replay with the measured
 # uniform points h44 / h53 (136 B) next to h54 and score h32 (both repeated from the held-out run: the merge check).
 # usage: t4_a2b_chain.sh <gpu index> <tag> [<tag> ...]   tags: qwen3_0p6b qwen3_1p7b qwen3_4b

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel17_q (rootcause, round TPS, 2026-11-14): three additions to sel14_q's deployed two-stage fetch, registered in
 REG_TPS.md. A name is a sel14_q name followed by optional suffixes, in this order:
   <sel14 name>[_tp<P>][_sp2][_dn|_dx]

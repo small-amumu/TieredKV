@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """pkv7_q: round P7 of the layered-KV line (registered in reg_pkv.md): which keys to refine (selection
 criteria, keep vs drop regime) and per-token base fixes. Quantizer primitives from pkv5_q, residual quantizer and the
 MSE-clip quantizer from pkv6_q (read-only imports). A method name is

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # Round L1 chain (2026-11-14): algorithm ladder on the SpeCache / KIVI-128 base, REG_L1_ladder.md.
 # Two lanes on pro5000 (at most two cards): lane A = main panel on GPU1, lane B = held-out then new panel on
 # GPU3. Each lane runs code/run_pkv3.sh (one model at a time on its card, failed models rerun once, DONE3 line).

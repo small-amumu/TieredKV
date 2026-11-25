@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel14_lab (rootcause fork; round D2): sel13_lab with sel14_q (adds the _h<rk><rv> host-residual store); records host bits
 per run and the number of _hff equality checks against sel4_q.
 

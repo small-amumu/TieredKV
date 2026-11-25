@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """v8g (round B1SK, amendment 2, 2026-11-19): the m8v8 value format of sel12_q with the stack's value group size.
 
 sel12_q._v8 (frozen, 6d1a58f0) replicates and re-codes the stack's 2-bit per-token Hadamard values as ONE group over the

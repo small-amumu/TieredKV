@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """rc_q: rotary-aware centring for the per-token key base (rootcause line; registered in reg_pkv.md).
 A method name is any pkv7_q name, optionally followed by _rc. With _rc on an ours / bal base, keys are centred by the
 calibration pre-RoPE mean rotated to each key's position, m(t) = R(t) m_pre, instead of the static post-RoPE mean m_post

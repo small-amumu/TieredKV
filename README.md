@@ -89,7 +89,7 @@ Full runs need a CUDA GPU and the models listed per experiment; see [`docs/repro
 
 ## License
 
-Released under the [Apache License 2.0](LICENSE). Copyright 2026 The TieredKV Authors.
+Released under the [Apache License 2.0](LICENSE). Copyright 2026 Zijie Hu.
 
 Every source file carries an `SPDX-License-Identifier: Apache-2.0` header. You may use, modify and redistribute
 the code under the terms of the license. Redistributions must keep the copyright and license notices and state
@@ -100,7 +100,7 @@ any changes. If you use this code or build on the method, please cite this repos
 ```bibtex
 @software{tieredkv2026,
   title  = {TieredKV: long-context decoding with a low-bit GPU KV cache and selective host corrections},
-  author = {{The TieredKV Authors}},
+  author = {Hu, Zijie},
   year   = {2026},
   url    = {https://github.com/small-amumu/TieredKV}
 }

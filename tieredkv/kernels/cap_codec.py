@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """cap_codec (capacity round): the byte layout of the deployed GPU base (stkm8v8128, sel12_q m8v8) and of the host
 residual store (sel14_q _h44), with encoders that reproduce sel12_q / sel14_q exactly and decoders that read only the bytes.
 Per token and KV head (d = 128, h = 64):

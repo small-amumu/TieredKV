@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """pkv11_q: round P11 of the layered-KV line (registered in reg_pkv.md). Two changes over pkv10_q:
   (1) NoPE-aware rotary centring: layers without RoPE (SmolLM3 uses none in every fourth layer) get static centring and the
       static water-filling ranking even when a name asks for _rc (rc_q rotates the mean in every layer, which is wrong

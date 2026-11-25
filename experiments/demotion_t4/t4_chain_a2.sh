@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # lab05 GPU 0, sequential: A2 full run (all traces, all 15 arms) on the models given as arguments, in order.
 # usage: t4_chain_a2.sh <tag> [<tag> ...]   tags: qwen3_0p6b qwen3_1p7b qwen3_4b
 # Resumable: rerun the same command; each model output resumes item by item. Stops at the first failing step.

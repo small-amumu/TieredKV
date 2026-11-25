@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel27_q (rootcause, round ACS, 2026-11-18): sel25_q plus ASYNCHRONOUS stage-1 candidates, registered in REG_ACS.md.
 
 Question: if the host fetch is taken off the critical path, the rows that can be corrected at decode step t are the

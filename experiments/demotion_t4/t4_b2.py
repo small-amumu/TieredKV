@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """B2 (read path, plan line B): page-hit statistics from the A2 replay records, plus two A2 items still open
 (answer-span argmax agreement, per-item host bytes quantiles).
 

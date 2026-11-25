@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T4 schedule self-test on synthetic data (CPU, no model, stubbed stack). Run: python -I t4_selftest.py
 
 Checks: (1) decisions use only the mass of rows before the decision row and equal a slow reference;

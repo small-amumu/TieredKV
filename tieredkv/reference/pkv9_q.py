@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """pkv9_q: round P9 of the layered-KV line (registered in reg_pkv.md): reverse water-filling of key bits
 (pkv8_q) stacked on rotary-aware centring (rootcause/rc_q, round RC1), with a bit-matched uniform control.
 Every pkv7_q name passes through; three suffixes are added:

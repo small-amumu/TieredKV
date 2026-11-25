@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T4: cold-residual demotion applied inside the forward pass (plan: next-phase plan, line A).
 
 t4_attend_h is t1_q.t1_attend_h (a verbatim copy of sel14_q._attend_h on the kivi128k64_x2s128_j50_h<rk><rv> path)

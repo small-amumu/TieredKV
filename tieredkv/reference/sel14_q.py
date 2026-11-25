@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel14_q (rootcause fork; round D2): the deployable host store. sel4_q's two-stage fetch (x2s<M>, K values) reads EXACT
 rows for the fetched keys and values, i.e. it assumes an FP16 copy of the whole cache on the host (16 bits per element:
 LLaMA-2-7B 512 KiB per token, so 95 GB of host memory holds only ~185K tokens). This module replaces that copy by a store

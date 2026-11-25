@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T1 (REG_T1.md): per-step selection statistics of the deployed configuration on NAB1's traces.
 
 Derived from nab1_lab.py (md5 031f432d): same attention hook, KIVI calibration pass, Q.calib / Q.calib_all and trace

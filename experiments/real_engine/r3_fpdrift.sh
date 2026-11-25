@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # R3 drift check D0 (pro5000): X-0140's own harness (tb_bench_v37 ef85729a, the m128r37.sh environment) reruns the fp arm only on
 # items 0-1 of vt / fwe / qa_1 @130000; the verdict compares pred and score with the archived X-0140 fp records of those items.
 # Usage: bash r3_fpdrift.sh <gpu 0-3>

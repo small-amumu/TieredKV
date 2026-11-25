@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # lab05 GPU 0, sequential: A1 diagnostic (8 length-octile items) on 0.6B and 1.7B, 4B smoke, A1 on 4B.
 # Stops at the first failing step. Stop: kill -- -<PGID> (never pkill -f).
 set -u

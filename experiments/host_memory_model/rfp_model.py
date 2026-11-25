@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """RFP: host-memory roofline and Pareto model for TieredKV's tiered KV (analysis only, no new runs).
 
 Calibrated on measured data already in this repository:

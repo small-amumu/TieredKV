@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """cap_attn (capacity round): one decode step of the deployed system computed from the STORED BYTES only (cap_codec
 layout), for the A5 family stkm8v8128k64_x2s128[_j<L>|_p<L>]_h44, one query row per call:
   GPU, per layer and KV head:  key / value code records of rows [0, W0) (W0 = floor(Lk / 128) * 128), the FP16 rows

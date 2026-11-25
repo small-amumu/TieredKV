@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # STAR night chain (2026-11-24).
 #   1. wait until every given pid (the OPX accuracy chain and its acc script) has exited;
 #   2. OPX timing phase, then host-memory phase: opx_formal_star.sh tim 1, then mem 1,

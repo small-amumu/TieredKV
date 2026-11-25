@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Re-evaluate RFP's near-data CPU correction option with the CPU times measured in T3 (lab05).
 
 rfp_model.py (unchanged, md5 checked below) assumes CPU_GFLOPS = 640e9 and RTT = 15 us for this

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """gtq3_lab (round B1a, 2026-11-14): gtq_lab with the official-aligned gtq_q_v3 instead of gtq_q; nothing else changed. Original: gtq_lab (rootcause fork; Block-GTQ comparison round): sel10_lab with gtq_q (gtqk<K>v<V> names added). Originally: sel10_lab (rootcause fork; combination round): sel6_lab with sel10_q (stk128 names: the main line's strongest base
 wfc_ck_w128_rc under sel4_q selection / two-stage / debias) and the main line's full calibration (pkv8 / 9 / 10 / 11).
 sel6_lab (rootcause fork; configuration policy step 1): sel4_lab with sel6_q, i.e. every sel4_q method plus the

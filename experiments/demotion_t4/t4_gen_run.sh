@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # T4 A3 launcher (check or generation) for one model on one GPU.
 # usage: t4_gen_run.sh <a3 dir> <stack root> <python> <gpu index> <model dir> <name> <t4_gen args...>
 # Writes logs/<name>.log (start line with pid/pgid, the program output, an rc= line). Stop: kill -- -<PGID>.

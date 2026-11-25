@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """R3 smoke pre-commitment, applied mechanically (REGISTRATION_R3.md, "Smoke"): reads only status, GPU peak and timing of the
 smoke record (cwe item 0, h54); never the pred or the score. Writes smoke/SMOKE_OK or smoke/SMOKE_FAIL with the reason.
 Criteria: exactly one record, status ok; gpu_peak_gib < 46; projected per-task time 40 x (prefill_sec + ntok x median decode

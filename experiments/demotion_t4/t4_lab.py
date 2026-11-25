@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T4 lab: fixed-trace replay of NAB1's traces with cold-residual demotion applied in the forward pass.
 
 Derived from nab2_lab.py / t1_lab.py: same attention hook, KIVI calibration pass, Q.calib / Q.calib_all, trace

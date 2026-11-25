@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """CODEC_SPEC v1 section 6 self-test of tierkv_vllm.codec against the deployed research code.
 
 1. codes / step / mn bit-identical to the reference pkv5_q.aq(r @ cq_lab3.hadamard(d), bits) on

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T1 scorer branch tests on synthetic statistics (no model). Run: python -I t1_aggtest.py <scratch dir>"""
 from __future__ import annotations
 

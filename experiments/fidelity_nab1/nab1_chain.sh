@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # NAB1 chain (REG_NAB1.md) on STAR: one GPU per call, models in order; per model trace generation, then replay.
 # usage (logs/ must exist): setsid nohup bash nab1_chain.sh <gpu> <model> [<model> ...] \
 #   > logs/launch_gpu<gpu>.out 2>&1 < /dev/null &

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """A2b direct comparisons: score-based h32 demotion against the measured uniform 136 B points, same run.
 
 usage: python -I t4_a2b_direct.py <a2b_reduced.json> <merged.json> [<a2b_reduced.json> <merged.json> ...]

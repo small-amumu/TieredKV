@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """pkv10_q: round P10 of the layered-KV line (registered in reg_pkv.md): reviewer controls and
 extensions of the P9 stack (pkv9_q: water-filling on rotary-aware centring). Every pkv9_q name passes through; added:
   wfs / wfq   water-filling with the static ranking under rotary centring (wfs..._rc) or the rotary ranking under static

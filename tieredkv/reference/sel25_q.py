@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel25_q (rootcause, round TS2L, 2026-11-16): sel23_q for long windows, registered in REG_TS2L.md. Row chunks
 that end at or before PREFILL["from"] are not computed (zeros; sel4_q.attend overwrites those rows with exact
 attention). New suffixes: _r0 = R through this path with nothing replaced (control), _ba<n> = R's M candidates

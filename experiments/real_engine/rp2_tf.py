@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """rp2_tf (TieredKV, round R2; 2026-11-10): the real decode engine E1 against the accuracy reference and fp on the Table B
 protocol (X-0080: tb_bench v3.7b with TB_TF=1 TB_GOLD=1) for Llama-3.2-3B-Instruct, RULER 6 tasks @32768.
 

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """M0 of the tiered-KV port: an in-engine oracle backend (bf16 KV cache, no new kernels).
 
 Every layer first runs the stock Triton attention for all rows. When MODE["attend"] is set, the rows

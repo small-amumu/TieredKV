@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kres (TieredKV, S4 residual-format fetch; 2026-11-07). The two-stage fix of kbench7.Step7 (mode 'two') reading
 b-bit residual records from pinned host memory instead of exact fp16 rows (the h33 / h54 formats of the accuracy runs:
 cap_codec.encode_res, one min / step pair per token and KV head, codes of the Hadamard-rotated residual packed as a

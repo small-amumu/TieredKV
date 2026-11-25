@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """tb_bench v3.9 (2026-11-16, round SKR) = v3.8 with all 13 RULER tasks in the ruler family (adds
 niah_single_1, niah_single_2, niah_multikey_1, qa_2). Everything else is v3.8; its text follows.
 tb_bench v3.8 (2026-11-16, SeKV comparison) = v3.7b with the LongBench family served by lb16 (16 English

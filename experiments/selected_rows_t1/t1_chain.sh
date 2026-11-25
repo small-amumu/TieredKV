@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # T1 chain (REG_T1.md v5) on STAR GPU0 only: models in order, then the scorer. Requires a passing smoke (smoke/PASS).
 # usage (from ~/work/nab/t1):
 #   md5sum -c --quiet FREEZE.md5 && \

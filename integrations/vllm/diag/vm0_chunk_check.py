@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """VM0 step 1a (CPU): is the research attend() row-independent of how the keys arrive?
 
 M0 (VM0) called sel29_q.attend once per vLLM prefill chunk: the chunk's query rows against the keys

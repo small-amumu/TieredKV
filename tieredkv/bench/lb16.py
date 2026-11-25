@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """lb16: the 16 English LongBench tasks for tb_bench (drop-in for lb.py: PROMPT, MAXGEN, DATA, score).
 
 Prompts and generation lengths are read from the official THUDM/LongBench config files (commit 2e00731f, MIT) shipped

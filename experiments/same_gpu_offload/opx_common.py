@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Shared pieces of the three OPX runners (REG_OPX.md): RULER task constants (vt, cwe, fwe, qa_1,
 qa_2), scoring as tb_bench v3.7 (qa_2 scored like qa_1, RULER's string_match_part), host RSS, and
 the decode meter (per-forward wall time + NVML PCIe bytes over the metered forwards).

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # Round B1c chain (2026-11-14): our stack base vs RotateKV (official code path), REG_B1c.md.
 # Two lanes on pro5000 (two pro5000 cards): lane A on GPU0, lane B on GPU1 (GPU2 / GPU3 taken by another user at freeze time), each via code/run_pkv3.sh into
 # its own tag directory (results/pkv/b1c_A, results/pkv/b1c_B: run_pkv3 keeps one run.log and one redo list per tag).

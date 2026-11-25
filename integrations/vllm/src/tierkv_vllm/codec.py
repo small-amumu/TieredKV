@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Host residual row codec, CODEC_SPEC v1 (interface I3), reference implementation.
 
 A row holds the residual r = x - x_b of one cached row (one token, layer, KV head) in rk bits (keys)

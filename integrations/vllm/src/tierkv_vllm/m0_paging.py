@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Paged-cache read-back and row selection of the M0 oracle (pure torch, no vLLM import).
 
 vLLM hands the attention backend a KV cache whose logical shape is (num_blocks, num_kv_heads,

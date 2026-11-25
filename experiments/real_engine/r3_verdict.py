@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """r3_verdict (TieredKV, round R3; 2026-11-10): the registered readings of REGISTRATION_R3.md, computed from the rp_run.py
 --mode ruler outputs of R3 (Llama-3.1-8B-Instruct, RULER vt / fwe / qa_1 @130000, items 0-19, widths h33 / h54;
 out/r3_<task>.jsonl) and the archived X-0140 records (pro5000: fp, kivi128 and the simulated h33 / h54, m128r37 items 0-9 cfg

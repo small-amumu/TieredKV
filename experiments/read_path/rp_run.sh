@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # RP run (PLAN_RP.md): wait for the GPU lock and an idle card, then the preflight (B 8, L 32768, thp), then the
 # full sweep. Every step's rc goes to <run_dir>/run.log; the md5 of the scripts is logged before the first step.
 # The python children inherit the GPU lock fd on purpose: the lock stays held while a child still uses the card.

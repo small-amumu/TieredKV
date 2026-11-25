@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """cq_lab: communications-inspired key-cache quantization and an inter-symbol-interference (ISI) view of key error
 (predictions registered in ~/kvt_bench/hc_mac/reg_cq.md before non-smoke outputs).
 

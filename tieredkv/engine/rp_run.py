@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """rp_run (TieredKV): drive the real engine E1 (rp_engine.py) on RULER items (2026-11-09).
 Modes:
   ruler  free greedy decoding exactly as tb_bench v3.7 (md5 ef85729a): prompt = input + answer_prefix (tokenizer BOS, no chat

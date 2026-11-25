@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """PCIe traffic meter for round OPX (REG_OPX.md section 4): integrates the NVML hardware PCIe
 throughput counters of one GPU while a code region runs.
 

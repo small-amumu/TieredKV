@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """NAB1 step 2: fixed-trace replay of 16-bit reasoning traces under compressed KV caches (REG_NAB1.md).
 
 Derived from sel30_lab.py (round VFB): same attention hook, the same KIVI calibration pass on CQ.CAL, the same

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """OPX engine fix, layout part (issue 161). Patches rp_engine (engine7, md5
 48545123) running on kalign_opx (make_kalign_opx.py: kalign_fr + fixed residual row stride + fused records written
 by the encoder; defaults bit-identical to kalign_fr, kernel tests in opx_kernel_test.py):

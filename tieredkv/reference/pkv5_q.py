@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """pkv5_q: quantizers, effective-bit accounting and the shared attention core for round P5 (baselines at matched
 effective bits; registered in reg_pkv.md). Every method stores keys AND values as 2-bit data (Kitty: some
 key channels 4-bit) with scale / zero rounded to FP16, re-implemented from the papers in one fake-quantization framework:

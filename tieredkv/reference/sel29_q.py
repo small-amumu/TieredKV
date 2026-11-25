@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel29_q (rootcause, round VFL, 2026-11-18): sel28_q plus PREDICT - VERIFY - FILL, registered in REG_VFL.md.
 
 The speculative-decoding structure applied to the host residual fetch. At decode step (query row) t:

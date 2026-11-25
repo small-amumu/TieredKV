@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """bl_q: same-harness reproductions of two published sparse-attention KV methods (rootcause fork), for the layered-KV
 comparisons of round S4. Both follow the official code read on 2026-11-04:
   Quest     mit-han-lab/Quest 01c1623b, evaluation/quest_attention.py (the accuracy-evaluation path)

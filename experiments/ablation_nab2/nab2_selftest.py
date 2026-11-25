@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """NAB2 self-test (REG_NAB2.md, Q0-b): check the patches on the smoke replay of one trace and, on
 a pass, write the Q0-b marker.
 

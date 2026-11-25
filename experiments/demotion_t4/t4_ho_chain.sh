@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # hd5090 (host-native), one GPU, sequential per model tag:
 #   1. held-out traces: nab1_gen.py (the A2 trace generator, bf16 HF generate, md5-checked) on MATH-500 items 64..191;
 #   2. T4 smoke on those traces (controls on this host, same frozen code as A2);

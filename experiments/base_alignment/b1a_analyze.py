@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """b1a_analyze: scoring of round B1a (our stack base vs the official-aligned Block-GTQ v3 at matched GPU bits) exactly
 as registered in REG_B1a.md. Per model: mean next-token KL D over the 4 evaluation segments of each run.
 Matched comparator per model: among the Block-GTQ arms, the one with the SMALLEST GPU bits that are >= the stack's GPU

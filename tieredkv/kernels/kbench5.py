@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kbench5: fused two-stage merge for the layered-KV decode step (rootcause fork, exploratory; FA3-style migration item 1).
 Builds on kbench4 (same base kernel, tile selection, phase-B merge, timing helpers) and adds:
   one<K>   one-stage reference path at any K (tile stage-1 keeps next_pow2(K) per tile, stage 2 the global top-K); the

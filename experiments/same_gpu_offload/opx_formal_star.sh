@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # OPX formal runs on STAR (PLAN_OPX.md). usage: setsid nohup bash opx_formal_star.sh <phase> <gpu> > /dev/null 2>&1 < /dev/null &
 #   acc    competitors, accuracy mode, ox set (5 tasks x 50 items, 130K), 7 arms one after another on GPU <gpu>
 #   calib  official full-attention paths at 32K (lc set vt / fwe / qa_1, items 0-9): ShadowKV full, RetroInfer Full_Flash_Attn

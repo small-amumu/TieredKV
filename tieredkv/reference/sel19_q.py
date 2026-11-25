@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel19_q (rootcause, round OTD, 2026-11-15): oracle tail diagnostics on top of sel17_q, registered in REG_OTD.md.
 A name is a sel14 x2s _h name with lam = 0 followed by one suffix:
   _otd   R plus statistics; the output is computed exactly as sel14_q._attend_h (must equal R bit for bit)

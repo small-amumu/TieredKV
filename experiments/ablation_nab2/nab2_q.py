@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """NAB2 (REG_NAB2.md): ablation arms of NAB1's deployed configuration, as call-scoped patches
 around the frozen stack.
 

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """CPU self-test of rkv_q against the official RotateKV code (fake_quant.py copied verbatim from the repo @ 3055e2b6).
 1. fake_quant: rkv_q.fake_quant == official fake_quant (bits 2, 3, 4; shapes of keys [1, 1, L, KVH*d] and values).
 2. transforms: k_inverse(k_forward(x)) == x without quantisation; the per-head value Hadamard is an involution.

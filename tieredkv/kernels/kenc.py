@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kenc (TieredKV, S1 fused cache encode; 2026-11-07, v2 after 3 reviews). One Triton kernel writes tokens
 into exactly the layered-cache layout the kbench7 decode kernels read (Step7, water-filled key base, m8 = 0, rc 2),
 replacing the ~50 torch ops per layer of lat_overhead.Enc.

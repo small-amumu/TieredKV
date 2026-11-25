@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T1 (REG_T1.md v4): sel14_q._attend_h with read-only selection statistics.
 
 t1_attend_h equals sel14_q._attend_h (STAR stack, md5 bee1a8504bfc159b1b8bff1878d58932) on the path T1 uses

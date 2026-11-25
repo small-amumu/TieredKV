@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """M1 kernel parity (I4 v1.1 section 2): the deployed kernel kalign.StepA (f96b21f5) vs the byte-level reference
 cap_attn.attend (449fdb84, equal to sel14_q._attend_h within 2.1e-6) on the same stored bytes, for B1 =
 stkm8v8128k64_x2s128_p50_h54 (M 128, K 64, lam -50 = _p50, host residuals key 5 bit / value 4 bit).

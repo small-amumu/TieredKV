@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Tiered KV cache (2-bit KIVI-128 GPU base + host residual store) for vLLM.
 
 M0: `TIERKV_M0`, an in-engine oracle backend that routes the scored rows through the research

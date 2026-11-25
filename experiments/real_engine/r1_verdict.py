@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """r1_verdict (TieredKV, round R1; 2026-11-10, v2 after 3 reviews): the registered gates and predictions of REGISTRATION_R1.md,
 computed from the rp2_tf.py outputs of R1 (LLaMA-2-7B-32K, MHA; out/r1_<task>.jsonl) and the archived X-0139 records
 (tf_g0a / tf_g2a.jsonl). Read-only; prints a JSON summary.

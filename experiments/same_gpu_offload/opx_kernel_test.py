@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Kernel-level bitwise tests of kalign_opx (make_kalign_opx.py) against kalign_fr (bfc8d073), synthetic data,
 one layer at a time is enough (the change is per-layer): B = 1, 8 KV heads, 4 query heads per KV head, d 128.
   a  defaults (RL = L, no frec): residual bytes and step outputs equal kalign_fr

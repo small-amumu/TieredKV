@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Reduce a t4_lab output to what t4_analyze.py reads, so outputs from two hosts can be merged locally.
 
 usage: python -I t4_reduce.py <lab_json> <out_json>

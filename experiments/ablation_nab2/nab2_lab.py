@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """NAB2 (REG_NAB2.md): NAB1's fixed-trace replay (nab1_lab.py 031f432d) with the ablation arms of nab2_q.py.
 
 Changes from nab1_lab.py, nothing else: the h2o arm is removed; runs named in nab2_q.ARMS go through nab2_q.attend

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Read-path microbenchmark RP (PLAN_RP.md, amendment 1): zero-copy residual-row reads from pinned host memory.
 
 T2: per-row cost of kalign-style zero-copy gathers with the host store on 4 KB pages vs 2 MB transparent huge

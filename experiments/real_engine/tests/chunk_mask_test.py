@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """rp_chunk.chunk_attn (the engine's long-prefill attention, chunk 4096) vs one causal SDPA call, on random tensors with
 the engine's shapes (H 32, KVH 8, D 128, bf16); asserts equality and prints the numbers (saved by the caller)."""
 import os

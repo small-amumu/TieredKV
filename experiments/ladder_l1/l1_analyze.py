@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """l1_analyze: scoring of round L1 (algorithm ladder on the SpeCache / KIVI-128 base) exactly as registered in
 REG_L1_ladder.md. Per model: mean next-token KL D over the evaluation segments of each run; ratios per model; median
 over models. A clause HOLDS when its median threshold, its count and (main panel only) the Holm-adjusted exact one-sided

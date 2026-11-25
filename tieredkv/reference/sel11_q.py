@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel11_q (rootcause fork, exploratory): sel10_q with the 1-bit half's per-token (mean, mean absolute deviation) stored
 in 8 bits instead of fp16, to see whether the water-filled key record can drop back from 12 to 10 metadata bytes per
 token (kernel overhead at long context). A method name is

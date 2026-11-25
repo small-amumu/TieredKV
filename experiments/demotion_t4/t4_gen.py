@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T4 A3: free generation on held-out MATH-500 problems with cold-residual demotion inside the decode loop.
 
 The model, attention hook, KIVI calibration and stack checks are t4_lab.py's. Decoding is incremental: the prompt is

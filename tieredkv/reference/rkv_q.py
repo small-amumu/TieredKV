@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """rkv_q (round B1c, 2026-11-14): RotateKV (Su et al., github.com/ZunhaiSu/RotateKV @ 3055e2b6) inside the
 sel4_q / sel10_q / gtq_q_v3 harness, so it is compared with our stack base and Block-GTQ on the same windows and models.
 Every step follows the official code path of the RotateKV2/3/4 setting (utils.py: head_group_num 4, grouped-head key

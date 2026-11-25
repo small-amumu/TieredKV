@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """NAB2 analysis (REG_NAB2.md): provenance, Q0-a/b/c/d/e checks, decision rules R1-R4, bits.
 
 usage: python nab2_analyze.py <nab1_out_dir> <nab2_out_dir>

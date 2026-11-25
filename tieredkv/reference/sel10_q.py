@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """sel10_q (rootcause fork; combination round): sel4_q's selection, two-stage fetch and debias on the main line's strongest
 key base (pkv11_q wfc_ck_w128_rc: keys centred by the rotary-aware mean, channel balance, the top half of the RoPE pairs by
 calibration importance at 3 bits and the rest at 1 bit (mean +- mean absolute deviation), each half per token after its own

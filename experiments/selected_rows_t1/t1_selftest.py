@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T1 self-test (REG_T1.md v3 Q0b / Q0c on synthetic data; CPU, no model). Run: python -I t1_selftest.py"""
 from __future__ import annotations
 

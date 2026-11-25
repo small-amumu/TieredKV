@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T3: near-data CPU-side residual correction microbenchmark (PLAN_RP.md section 4; RFP option 1).
 
 Instead of the GPU reading 192 random residual rows per (layer, sequence, KV head) over PCIe, the CPU next to host

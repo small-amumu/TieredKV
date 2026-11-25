@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """OPX analysis (PLAN_OPX.md): descriptive readings only, no pass / fail thresholds. Usability is judged afterwards from these numbers.
 usage: python -I opx_analyze.py --star <dir with acc/ calib/ tim/ mem/> --p5 <opx_formal dir> [--out report.txt]
        python -I opx_analyze.py --selftest

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 The TieredKV Authors
+// Copyright 2026 Zijie Hu
 // T3 near-data CPU correction kernels (rp_cpu.py): simple C++ / OpenMP, compiler-vectorised, not hand-tuned SIMD.
 // Records: words = little-endian bit stream of 128 codes of `bits` bits (16 * bits bytes per row);
 // meta = (min, step) as fp16 bits; value = code * step + min.

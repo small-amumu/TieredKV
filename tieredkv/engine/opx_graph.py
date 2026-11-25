@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """OPX engine: the decode step in a CUDA graph. Requires kalign_opx with WDEV
 (the window row count W read from a device int32; kernel tests opx_kernel_test.py (e)).
 

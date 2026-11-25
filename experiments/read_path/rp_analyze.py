@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Analysis of read-path microbenchmark RP (PLAN_RP.md section 5 and amendments 1-2). Descriptive only: no thresholds.
 
 Input: one rp_probe.py JSON-lines file per machine. Output: <out>.json (every computed row) and <out>.md (tables).

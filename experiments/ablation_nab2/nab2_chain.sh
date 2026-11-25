@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # NAB2 chain (REG_NAB2.md) on STAR: one GPU per call, models in order. Per model: the Q0-a
 # control replay (NAB1's two arms and the patched variant with every ablation off, items 0-7),
 # its gate (nab2_analyze.py --gate: provenance, code record, Q0-a, Q0-e), then NAB1's two arms and the four ablation arms together on all 64 NAB1

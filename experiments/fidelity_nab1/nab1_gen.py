@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """NAB1 step 1: 16-bit reasoning traces for fixed-trace replay (REG_NAB1.md).
 
 One model per call. MATH-500 items [start, start + n) in dataset order; Qwen3 chat template with thinking on; the user

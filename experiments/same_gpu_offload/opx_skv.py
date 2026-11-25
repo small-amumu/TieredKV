@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """opx_skv (round OPX, REG_OPX.md; 2026-11-23) = sota_skv v3 (2026-11-08, X-0140) with:
   - qa_2 (RULER HotpotQA, maxgen 32, string_match_part) via opx_common;
   - decode metering: per-forward wall time and NVML PCIe bytes (opx_common.DecodeMeter);

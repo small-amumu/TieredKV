@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # T3 run (PLAN_RP.md section 4). phase cpu: CPU throughput sweep, no GPU context (CUDA_VISIBLE_DEVICES empty),
 # nice 10. phase gpu: numeric check + GPU<->CPU round trips, after the GPU lock and an idle card (as rp_run.sh).
 # Every rc goes to <run_dir>/run_<phase>.log.

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """rp_engine E1 (TieredKV): the real decode engine of the layered KV cache on the deployed kernels (2026-11-09).
 See DESIGN_E1.md for the step-by-step correspondence with the accuracy reference (ours_q 92ef53ff / cap_attn 29025867).
 - Kernels: kalign f96b21f5 StepA (fused aprep / abasew / sel / afix2A / afix2B / afixB; water-filled stack base; the

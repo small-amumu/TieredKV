@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # OPX formal runs on pro5000 (PLAN_OPX.md); GPU0 / GPU2 only (the other two cards belong to other users).
 # usage: setsid nohup bash opx_formal_p5.sh <phase> <gpu> [widths] > /dev/null 2>&1 < /dev/null &
 #   ours <gpu> <widths>  our engine, accuracy mode, ox set (5 tasks x 50, 130K); one process and one file per width

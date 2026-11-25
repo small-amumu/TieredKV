@@ -1,6 +1,6 @@
 #!/bin/bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # T4 GPU smoke: controls on the longest trace of one model, on one GPU.
 # usage: t4_smoke.sh <root> <python> <gpu index> <model dir> <tag>
 # Writes smoke/t4_<tag>.smoke.json and, when every control passed, smoke/PASS_<tag> (FREEZE.md5 line).

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """T4 analysis: per model and arm, quality vs host residual bytes, with paired item-level intervals.
 
 usage: python -I t4_analyze.py <out_dir> <lab_json> [<lab_json> ...]

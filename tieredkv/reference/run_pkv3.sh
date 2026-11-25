@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # pkv runner v3: like run_pkv2.sh but the GPU set comes from $GPUS (default "1 3": GPU0 is shared with another user's
 # large jobs that grab memory after our free-memory check), and every model whose run fails is rerun once at the end
 # (old logs moved to <tag>/fail2/). Ends with a DONE3 line in the run.log.

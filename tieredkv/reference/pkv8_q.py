@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """pkv8_q: round P8 of the layered-KV line (registered in reg_pkv.md): reverse water-filling of key bits
 over RoPE frequency pairs, with the pair importance taken from calibration data, from the weights alone, or at random,
 plus the weight-only statistics used to predict how hard a model's keys are to quantize. Everything else (bases, fetch,

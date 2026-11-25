@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """synthetic test of r1_verdict.py v2 (writes only into a temporary directory given as argv[1]).
 Cases: equal arms -> Part 1 PASS (A0 included), P1 / P2 hold, 60 matched; engine NLL +0.02 -> A2 FAIL; engine KL +1.5e-3 -> A3
 FAIL; KL +4e-4 -> A3 PASS; vt missing -> FAIL and P1 / P2 not holding; rc != 0 -> FAIL; lengths differ on 2 tasks -> P1 not

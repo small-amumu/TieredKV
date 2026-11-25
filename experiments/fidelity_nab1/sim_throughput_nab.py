@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Analytic feasibility check for H5 (throughput under a fixed VRAM limit, Not All Bits App. C.1 protocol).
 
 Decode is modelled as memory-bound: one step reads all weights once plus each sequence's GPU KV; our tiered arm also

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """kalign_fr = kalign.py f96b21f5 + fused host residual records (make_kalign_fr.py; RHR, 2026-11-19).
 kalign (TieredKV, kernel path aligned with the accuracy reference; 2026-11-07, v2: e4m3 bytes read directly, aligned
 encoder aenc_kernel; v1 passed kalign_check on Llama-3.2-3B, 28 layers x 3 lengths, median rel 3.9e-4, max 2.5e-3).

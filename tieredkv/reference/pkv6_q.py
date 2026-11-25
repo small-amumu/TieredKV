@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """pkv6_q: round P6 of the layered-KV line (registered in reg_pkv.md): what to fetch on a KIVI base.
 Bases, quantizers, calibration and bit accounting come from pkv5_q (read-only import). A method name is
   <base><G>[k<K>][_k<kb>][_v<vb>][_s<share>][_z<sink>][_o<N>]

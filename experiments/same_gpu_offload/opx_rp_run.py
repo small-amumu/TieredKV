@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """opx_rp_run (round OPX, REG_OPX.md; 2026-11-23) = rp_run (md5 16f8dc77) with: qa_2; widths h32 / h43
 added to h33 / h54; decode metering (per-forward wall time, NVML PCIe bytes, opx_common.DecodeMeter);
 host RSS after prefill and at the end; --timing (EOS ignored, TIMING_STEPS tokens, forwards 0-15 not metered, no score);

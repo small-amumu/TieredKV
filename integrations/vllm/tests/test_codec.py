@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """CPU tests of the CODEC_SPEC v1 implementation (the reference bit-identity test against the
 research code runs separately: diag/codec_selftest.py, on a machine with the research tree)."""
 

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """Merge the A2b arms (h44, h53) into the held-out replay of the same traces, after checking that the arms both runs
 share (h54, sc_G1024_h32_75) agree.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 # R3 chain (pro5000): wait for R1's driver on this card to exit (exact PID), then run R3's steps on the card. The first card
 # to come free claims the role "first" (atomic mkdir); the other card gets "second".
 #   first : D0 (r3_fpdrift.sh), the smoke (cwe item 0, h54), the mechanical smoke check, then the formal tasks vt and fwe.

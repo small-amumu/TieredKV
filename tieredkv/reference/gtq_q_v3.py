@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """gtq_q v3 (rootcause fork): Block-GTQ (arXiv 2606.24033, Liang, Zhang, Jia) inside the sel4_q / sel10_q harness, so that
 it can be compared with the layered scheme (stk128 + two-stage fetch + debias) on the same windows and models, and combined
 with our selection / two-stage fetch / debias. v1-v2 followed the paper's v1 text; v3 is aligned with the official code

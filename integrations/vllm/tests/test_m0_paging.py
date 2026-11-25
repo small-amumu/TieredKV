@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2026 The TieredKV Authors
+# Copyright 2026 Zijie Hu
 """VM0 step 1b (CPU): M0's read-back of vLLM's paged cache returns exactly what was written.
 
 Tokens are written through the logical (num_blocks, nkv, block_size, 2 hs) index order that vLLM
