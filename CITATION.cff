@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "TieredKV: long-context decoding with a low-bit GPU KV cache and selective host corrections"
+type: software
+authors:
+  - family-names: "Hu"
+    given-names: "Zijie"
+license: Apache-2.0
+repository-code: "https://github.com/small-amumu/TieredKV"
+url: "https://github.com/small-amumu/TieredKV"
+date-released: 2026-11-25
+keywords:
+  - kv-cache
+  - quantization
+  - long-context
+  - llm-inference
+  - vllm
