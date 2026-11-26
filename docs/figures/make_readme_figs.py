@@ -289,14 +289,14 @@ def _heat(fig: plt.Figure, ax: plt.Axes, cax: plt.Axes, rows: list[str], cols: l
             color = "white" if dark else "#1a1a1a"
             txt = f"{v:.0f}" if abs(v - round(v)) < 1e-9 else f"{v:.1f}"
             if j == nc - 1:
-                ax.text(j + 0.5, i + 0.40, f"{v:.1f}", ha="center", va="center", fontsize=8,
+                ax.text(j + 0.5, i + 0.38, f"{v:.1f}", ha="center", va="center", fontsize=11.5,
                         fontweight="bold", color=color)
                 d = v - ref
                 sub = "ref." if r == ref_row else f"{d:+.1f}"
-                ax.text(j + 0.5, i + 0.75, sub, ha="center", va="center", fontsize=6,
+                ax.text(j + 0.5, i + 0.76, sub, ha="center", va="center", fontsize=8.5,
                         color=color, style="italic")
             else:
-                ax.text(j + 0.5, i + 0.5, txt, ha="center", va="center", fontsize=7.5, color=color)
+                ax.text(j + 0.5, i + 0.5, txt, ha="center", va="center", fontsize=11, color=color)
     i_b = rows.index(bold_row)
     for x0, x1 in ((0, nc - 2), (nc - 1, nc)):
         ax.add_patch(plt.Rectangle((x0 + 0.03, i_b + 0.03), x1 - x0 - 0.06, 0.94, fill=False,
@@ -312,15 +312,15 @@ def _heat(fig: plt.Figure, ax: plt.Axes, cax: plt.Axes, rows: list[str], cols: l
     ax.set_xlim(0, nc)
     ax.set_ylim(len(rows), 0)
     ax.grid(False)
-    ax.tick_params(length=0, labelsize=8)
+    ax.tick_params(length=0, labelsize=10.5)
     ax.xaxis.tick_top()
     for s in ax.spines.values():
         s.set_visible(False)
-    ax.set_title(title, pad=18, loc="left", fontsize=10)
+    ax.set_title(title, pad=20, loc="left", fontsize=12.5)
     cb = fig.colorbar(mesh, cax=cax)
     cb.outline.set_linewidth(0.8)
-    cb.ax.tick_params(labelsize=7, width=0.8, length=2.5)
-    cb.set_label("Score", fontsize=8, fontweight="bold")
+    cb.ax.tick_params(labelsize=9, width=0.8, length=2.5)
+    cb.set_label("Score", fontsize=10, fontweight="bold")
 
 
 def fig_heatmap() -> None:
@@ -334,7 +334,7 @@ def fig_heatmap() -> None:
     rows_b = list(pb["rows"])
     mat_b = np.array([pb["rows"][r]["scores"] for r in rows_b], dtype=float)
     avg_b = np.array([pb["rows"][r]["avg"] for r in rows_b], dtype=float)
-    fig = plt.figure(figsize=(6.8, 5.4))
+    fig = plt.figure(figsize=(8.2, 6.6))
     gs = fig.add_gridspec(2, 2, height_ratios=[5, 4], width_ratios=[40, 1], hspace=0.42, wspace=0.04)
     ref_a = next(r for r in rows_a if r.startswith("Full attention"))
     ref_b = next(r for r in rows_b if r.startswith("Full attention"))
@@ -348,11 +348,11 @@ def fig_heatmap() -> None:
           [short[t] for t in pb["tasks"]] + ["", "Avg"], mat_b, avg_b, 0,
           "(b) RULER 130K, 5 tasks x 50 items, one RTX 4090", ref_b)
     fig.text(0.5, 0.035, f"Avg column: mean score and its difference to {ref_a} in (a) and to "
-             f"{ref_b} in (b). TieredKV row framed.", ha="center", va="top", fontsize=6.5,
+             f"{ref_b} in (b). TieredKV row framed.", ha="center", va="top", fontsize=8.5,
              color="#444444")
     fig.text(0.5, 0.01, "S: NIAH-single, MK: NIAH-multikey, MV: NIAH-multivalue, MQ: NIAH-multiquery, "
              "FWE: frequent words, CWE: common words, QA: question answering, VT: variable tracking",
-             ha="center", va="top", fontsize=6.5, color="#444444")
+             ha="center", va="top", fontsize=8.5, color="#444444")
     _save(fig, "fig_ruler_heatmap.png")
 
 
