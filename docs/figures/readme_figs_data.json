@@ -1,0 +1,872 @@
+{
+ "fig1": {
+  "source": [
+   "experiments/fidelity_nab1/results/analysis_nab1.txt (per-model lines kivi128, kivi128k64_x2s128_j50_h54, h2o: decode KL median, answer KL median)"
+  ],
+  "models": {
+   "qwen3_0p6b": {
+    "kivi2": {
+     "gpu_bits": 2.561,
+     "decode_kl_mean": 0.121,
+     "decode_kl_median": 0.1189,
+     "answer_kl_median": 0.06901
+    },
+    "tiered": {
+     "gpu_bits": 2.561,
+     "decode_kl_mean": 0.002028,
+     "decode_kl_median": 0.001981,
+     "answer_kl_median": 0.0008802
+    },
+    "h2o": {
+     "gpu_bits": 2.856,
+     "decode_kl_mean": 0.08407,
+     "decode_kl_median": 0.07091,
+     "answer_kl_median": 0.08357
+    },
+    "paired_median_ratio_vs_kivi2_decode": 0.01617,
+    "paired_median_ratio_vs_h2o_decode": 0.02941
+   },
+   "qwen3_1p7b": {
+    "kivi2": {
+     "gpu_bits": 2.522,
+     "decode_kl_mean": 0.1637,
+     "decode_kl_median": 0.1595,
+     "answer_kl_median": 0.04938
+    },
+    "tiered": {
+     "gpu_bits": 2.522,
+     "decode_kl_mean": 0.002807,
+     "decode_kl_median": 0.002658,
+     "answer_kl_median": 0.0006502
+    },
+    "h2o": {
+     "gpu_bits": 2.778,
+     "decode_kl_mean": 0.1213,
+     "decode_kl_median": 0.1174,
+     "answer_kl_median": 0.08086
+    },
+    "paired_median_ratio_vs_kivi2_decode": 0.017,
+    "paired_median_ratio_vs_h2o_decode": 0.02426
+   },
+   "qwen3_4b": {
+    "kivi2": {
+     "gpu_bits": 2.539,
+     "decode_kl_mean": 0.08124,
+     "decode_kl_median": 0.07668,
+     "answer_kl_median": 0.02262
+    },
+    "tiered": {
+     "gpu_bits": 2.539,
+     "decode_kl_mean": 0.001119,
+     "decode_kl_median": 0.0009776,
+     "answer_kl_median": 0.0002589
+    },
+    "h2o": {
+     "gpu_bits": 2.812,
+     "decode_kl_mean": 0.09403,
+     "decode_kl_median": 0.08914,
+     "answer_kl_median": 0.06267
+    },
+    "paired_median_ratio_vs_kivi2_decode": 0.01231,
+    "paired_median_ratio_vs_h2o_decode": 0.01144
+   }
+  }
+ },
+ "fig2": {
+  "source": [
+   "experiments/ladder_l1/results/l1_analysis.txt, section 'l1_main', block 'per model D' (columns: kivi128, kivi128k64_xqs = SpeCache-style, kivi128k120_x2s120_h88 = residual rows, kivi128k80_x2s160_h88 = two-stage, kivi128k80_x2s160_j50_h88 = full ladder, kivi128k64_x2s128_j50_h54 = h54)",
+   "experiments/ladder_l1/README.md (step definitions, medians)"
+  ],
+  "column_mapping_check": "medians of per-model ratios reproduce l1_analysis A1 (residual rows / SpeCache-style 0.523), A4 (full ladder / SpeCache-style 0.374) and A5 (h54 / SpeCache-style 0.513); A2 and A3 are step ratios: two-stage / residual rows median 0.81 (A2 0.810), full ladder / two-stage median 0.908 (A3 0.908)",
+  "median_ratio_vs_specache": {
+   "residual_rows": 0.5227430971620295,
+   "two_stage": 0.4328541575315138,
+   "full_ladder": 0.37437887460950414,
+   "h54": 0.5134543754019703
+  },
+  "models": {
+   "EXAONE-4.0-1.2B": {
+    "kl_kivi2": 0.3731,
+    "kl_specache_style": 0.04838,
+    "kl_residual_rows": 0.04376,
+    "kl_two_stage": 0.03765,
+    "kl_full_ladder": 0.03837,
+    "kl_h54": 0.03633
+   },
+   "Gemma-2-2B": {
+    "kl_kivi2": 0.07161,
+    "kl_specache_style": 0.00143,
+    "kl_residual_rows": 0.0006327,
+    "kl_two_stage": 0.0005038,
+    "kl_full_ladder": 0.0004849,
+    "kl_h54": 0.001019
+   },
+   "GLM-4-9B": {
+    "kl_kivi2": 0.1269,
+    "kl_specache_style": 0.007671,
+    "kl_residual_rows": 0.004064,
+    "kl_two_stage": 0.003309,
+    "kl_full_ladder": 0.002803,
+    "kl_h54": 0.003922
+   },
+   "Llama-3.2-3B": {
+    "kl_kivi2": 0.08599,
+    "kl_specache_style": 0.002247,
+    "kl_residual_rows": 0.001114,
+    "kl_two_stage": 0.0008951,
+    "kl_full_ladder": 0.0008614,
+    "kl_h54": 0.001309
+   },
+   "Llama-3.1-8B": {
+    "kl_kivi2": 0.06666,
+    "kl_specache_style": 0.002473,
+    "kl_residual_rows": 0.001615,
+    "kl_two_stage": 0.001455,
+    "kl_full_ladder": 0.001431,
+    "kl_h54": 0.001724
+   },
+   "Mistral-7B": {
+    "kl_kivi2": 0.05749,
+    "kl_specache_style": 0.002387,
+    "kl_residual_rows": 0.001251,
+    "kl_two_stage": 0.001053,
+    "kl_full_ladder": 0.0009611,
+    "kl_h54": 0.001205
+   },
+   "Phi-4-mini": {
+    "kl_kivi2": 0.0975,
+    "kl_specache_style": 0.002833,
+    "kl_residual_rows": 0.0007961,
+    "kl_two_stage": 0.0005203,
+    "kl_full_ladder": 0.0004674,
+    "kl_h54": 0.0009603
+   },
+   "Qwen2.5-0.5B": {
+    "kl_kivi2": 0.3872,
+    "kl_specache_style": 0.01144,
+    "kl_residual_rows": 0.005534,
+    "kl_two_stage": 0.004057,
+    "kl_full_ladder": 0.003591,
+    "kl_h54": 0.004914
+   },
+   "Qwen2.5-1.5B": {
+    "kl_kivi2": 0.1594,
+    "kl_specache_style": 0.01031,
+    "kl_residual_rows": 0.006911,
+    "kl_two_stage": 0.00613,
+    "kl_full_ladder": 0.002101,
+    "kl_h54": 0.002865
+   },
+   "Qwen2.5-7B": {
+    "kl_kivi2": 0.08591,
+    "kl_specache_style": 0.004433,
+    "kl_residual_rows": 0.002536,
+    "kl_two_stage": 0.002042,
+    "kl_full_ladder": 0.001846,
+    "kl_h54": 0.00237
+   },
+   "Qwen2-0.5B": {
+    "kl_kivi2": 0.3029,
+    "kl_specache_style": 0.01348,
+    "kl_residual_rows": 0.00587,
+    "kl_two_stage": 0.004048,
+    "kl_full_ladder": 0.003166,
+    "kl_h54": 0.004339
+   },
+   "Qwen3.5-4B": {
+    "kl_kivi2": 0.09461,
+    "kl_specache_style": 0.01232,
+    "kl_residual_rows": 0.007904,
+    "kl_two_stage": 0.009367,
+    "kl_full_ladder": 0.009035,
+    "kl_h54": 0.01094
+   },
+   "Qwen3-0.6B": {
+    "kl_kivi2": 0.2137,
+    "kl_specache_style": 0.008309,
+    "kl_residual_rows": 0.003504,
+    "kl_two_stage": 0.002781,
+    "kl_full_ladder": 0.002512,
+    "kl_h54": 0.003763
+   },
+   "Qwen3-1.7B": {
+    "kl_kivi2": 0.1315,
+    "kl_specache_style": 0.005317,
+    "kl_residual_rows": 0.0023,
+    "kl_two_stage": 0.001874,
+    "kl_full_ladder": 0.001708,
+    "kl_h54": 0.002463
+   },
+   "Qwen3-8B": {
+    "kl_kivi2": 0.0824,
+    "kl_specache_style": 0.004158,
+    "kl_residual_rows": 0.002288,
+    "kl_two_stage": 0.001806,
+    "kl_full_ladder": 0.001608,
+    "kl_h54": 0.002144
+   },
+   "SmolLM3-3B": {
+    "kl_kivi2": 0.07186,
+    "kl_specache_style": 0.00229,
+    "kl_residual_rows": 0.001194,
+    "kl_two_stage": 0.001016,
+    "kl_full_ladder": 0.0009436,
+    "kl_h54": 0.001401
+   }
+  },
+  "median_ratio_vs_specache_note": "computed here from the per-model values below; two_stage is not printed in the source file"
+ },
+ "fig3": {
+  "source": [
+   "experiments/same_gpu_offload/results/opx_numbers.txt, lines '[score] <arm>' (RULER mean, 95% bootstrap CI) and '[pcie] <arm>' (median MB/step, IQR)"
+  ],
+  "setup": "Llama-3.1-8B-Instruct, ~130K tokens, 5 RULER tasks x 50 items; PCIe on one RTX 4090",
+  "arms": {
+   "fp": {
+    "score": {
+     "mean": 51.36,
+     "lo": 47.08,
+     "hi": 55.53
+    },
+    "pcie_mb_per_step": null
+   },
+   "h54": {
+    "score": {
+     "mean": 53.67,
+     "lo": 49.43,
+     "hi": 57.73
+    },
+    "pcie_mb_per_step": {
+     "median": 7.64,
+     "q1": 7.52,
+     "q3": 7.77
+    }
+   },
+   "ret009": {
+    "score": {
+     "mean": 51.72,
+     "lo": 47.61,
+     "hi": 55.73
+    },
+    "pcie_mb_per_step": {
+     "median": 13.84,
+     "q1": 12.46,
+     "q3": 15.06
+    }
+   },
+   "ret018": {
+    "score": {
+     "mean": 53.29,
+     "lo": 49.23,
+     "hi": 57.28
+    },
+    "pcie_mb_per_step": {
+     "median": 39.4,
+     "q1": 33.56,
+     "q3": 41.5
+    }
+   },
+   "ret036": {
+    "score": {
+     "mean": 53.31,
+     "lo": 49.27,
+     "hi": 57.21
+    },
+    "pcie_mb_per_step": {
+     "median": 156.44,
+     "q1": 146.97,
+     "q3": 167.95
+    }
+   },
+   "skv1024": {
+    "score": {
+     "mean": 50.37,
+     "lo": 46.08,
+     "hi": 54.48
+    },
+    "pcie_mb_per_step": {
+     "median": 33.98,
+     "q1": 29.28,
+     "q3": 36.47
+    }
+   },
+   "skv2048": {
+    "score": {
+     "mean": 50.24,
+     "lo": 46.0,
+     "hi": 54.43
+    },
+    "pcie_mb_per_step": {
+     "median": 59.94,
+     "q1": 57.36,
+     "q3": 61.96
+    }
+   },
+   "skv4096": {
+    "score": {
+     "mean": 50.13,
+     "lo": 45.87,
+     "hi": 54.29
+    },
+    "pcie_mb_per_step": {
+     "median": 103.25,
+     "q1": 97.63,
+     "q3": 105.57
+    }
+   }
+  }
+ },
+ "fig4": {
+  "source": [
+   "experiments/demotion_t4/results/a2b_analysis.txt, block '== <model> [all]' (128 held-out items per model): columns B/rec, KL dec, 'x h54 dec [95%]'"
+  ],
+  "note": "h54 ratio is 1 by definition; sc = demote 75% of rows older than a 1024-token window to h32c chosen by attention score, rnd = same with random choice; all points are measured, none interpolated",
+  "models": {
+   "Qwen3-0.6B": {
+    "h54": {
+     "bytes_per_record": 152.0,
+     "kl_decode": 0.00216,
+     "ratio_vs_h54": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 128
+    },
+    "h44": {
+     "bytes_per_record": 136.0,
+     "kl_decode": 0.00243,
+     "ratio_vs_h54": 1.15,
+     "lo": 1.14,
+     "hi": 1.18,
+     "n": 128
+    },
+    "h53": {
+     "bytes_per_record": 136.0,
+     "kl_decode": 0.0026,
+     "ratio_vs_h54": 1.25,
+     "lo": 1.22,
+     "hi": 1.28,
+     "n": 128
+    },
+    "h43": {
+     "bytes_per_record": 120.0,
+     "kl_decode": 0.00287,
+     "ratio_vs_h54": 1.4,
+     "lo": 1.36,
+     "hi": 1.44,
+     "n": 128
+    },
+    "h33": {
+     "bytes_per_record": 104.0,
+     "kl_decode": 0.0042,
+     "ratio_vs_h54": 2.11,
+     "lo": 2.0,
+     "hi": 2.23,
+     "n": 128
+    },
+    "h32": {
+     "bytes_per_record": 88.0,
+     "kl_decode": 0.00742,
+     "ratio_vs_h54": 3.78,
+     "lo": 3.52,
+     "hi": 4.05,
+     "n": 128
+    },
+    "sc_G1024_h32_75": {
+     "bytes_per_record": 132.1,
+     "kl_decode": 0.0023,
+     "ratio_vs_h54": 1.05,
+     "lo": 1.04,
+     "hi": 1.06,
+     "n": 128
+    },
+    "rnd_G1024_h32_75": {
+     "bytes_per_record": 132.1,
+     "kl_decode": 0.00249,
+     "ratio_vs_h54": 1.13,
+     "lo": 1.11,
+     "hi": 1.14,
+     "n": 128
+    }
+   },
+   "Qwen3-1.7B": {
+    "h54": {
+     "bytes_per_record": 152.0,
+     "kl_decode": 0.00288,
+     "ratio_vs_h54": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 128
+    },
+    "h44": {
+     "bytes_per_record": 136.0,
+     "kl_decode": 0.00315,
+     "ratio_vs_h54": 1.11,
+     "lo": 1.09,
+     "hi": 1.13,
+     "n": 128
+    },
+    "h53": {
+     "bytes_per_record": 136.0,
+     "kl_decode": 0.00336,
+     "ratio_vs_h54": 1.19,
+     "lo": 1.16,
+     "hi": 1.21,
+     "n": 128
+    },
+    "h43": {
+     "bytes_per_record": 120.0,
+     "kl_decode": 0.00368,
+     "ratio_vs_h54": 1.31,
+     "lo": 1.28,
+     "hi": 1.35,
+     "n": 128
+    },
+    "h33": {
+     "bytes_per_record": 104.0,
+     "kl_decode": 0.00507,
+     "ratio_vs_h54": 1.83,
+     "lo": 1.77,
+     "hi": 1.91,
+     "n": 128
+    },
+    "h32": {
+     "bytes_per_record": 88.0,
+     "kl_decode": 0.00947,
+     "ratio_vs_h54": 3.37,
+     "lo": 3.16,
+     "hi": 3.6,
+     "n": 128
+    },
+    "sc_G1024_h32_75": {
+     "bytes_per_record": 128.4,
+     "kl_decode": 0.00307,
+     "ratio_vs_h54": 1.06,
+     "lo": 1.04,
+     "hi": 1.07,
+     "n": 128
+    },
+    "rnd_G1024_h32_75": {
+     "bytes_per_record": 128.4,
+     "kl_decode": 0.00335,
+     "ratio_vs_h54": 1.15,
+     "lo": 1.13,
+     "hi": 1.18,
+     "n": 128
+    }
+   },
+   "Qwen3-4B": {
+    "h54": {
+     "bytes_per_record": 152.0,
+     "kl_decode": 0.00114,
+     "ratio_vs_h54": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 128
+    },
+    "h44": {
+     "bytes_per_record": 136.0,
+     "kl_decode": 0.00125,
+     "ratio_vs_h54": 1.1,
+     "lo": 1.08,
+     "hi": 1.13,
+     "n": 128
+    },
+    "h53": {
+     "bytes_per_record": 136.0,
+     "kl_decode": 0.00142,
+     "ratio_vs_h54": 1.27,
+     "lo": 1.24,
+     "hi": 1.31,
+     "n": 128
+    },
+    "h43": {
+     "bytes_per_record": 120.0,
+     "kl_decode": 0.00154,
+     "ratio_vs_h54": 1.39,
+     "lo": 1.35,
+     "hi": 1.43,
+     "n": 128
+    },
+    "h33": {
+     "bytes_per_record": 104.0,
+     "kl_decode": 0.00215,
+     "ratio_vs_h54": 1.97,
+     "lo": 1.89,
+     "hi": 2.07,
+     "n": 128
+    },
+    "h32": {
+     "bytes_per_record": 88.0,
+     "kl_decode": 0.00395,
+     "ratio_vs_h54": 3.69,
+     "lo": 3.49,
+     "hi": 3.92,
+     "n": 128
+    },
+    "sc_G1024_h32_75": {
+     "bytes_per_record": 128.7,
+     "kl_decode": 0.00123,
+     "ratio_vs_h54": 1.07,
+     "lo": 1.06,
+     "hi": 1.09,
+     "n": 128
+    },
+    "rnd_G1024_h32_75": {
+     "bytes_per_record": 128.7,
+     "kl_decode": 0.0015,
+     "ratio_vs_h54": 1.28,
+     "lo": 1.25,
+     "hi": 1.32,
+     "n": 128
+    }
+   }
+  }
+ },
+ "fig5": {
+  "source": [
+   "research records, not in this repository: results_a6_t4_analysis.txt, block '== <model> [all]', arms n54 (5+4), n44 (4+4), n43 (4+3), n33 (3+3) = step-normalized coding; h44 = previous coding at 4+4",
+   "experiments/residual_coding/README.md (results table, same values)"
+  ],
+  "models": {
+   "Qwen3-0.6B": {
+    "n54": {
+     "bytes_per_record": 144.0,
+     "ratio_vs_h54": 0.93,
+     "lo": 0.91,
+     "hi": 0.95,
+     "n": 64
+    },
+    "n44": {
+     "bytes_per_record": 128.0,
+     "ratio_vs_h54": 1.0,
+     "lo": 0.98,
+     "hi": 1.02,
+     "n": 64
+    },
+    "n43": {
+     "bytes_per_record": 112.0,
+     "ratio_vs_h54": 1.09,
+     "lo": 1.07,
+     "hi": 1.12,
+     "n": 64
+    },
+    "n33": {
+     "bytes_per_record": 96.0,
+     "ratio_vs_h54": 1.31,
+     "lo": 1.27,
+     "hi": 1.35,
+     "n": 64
+    },
+    "h44": {
+     "bytes_per_record": 136.0,
+     "ratio_vs_h54": 1.16,
+     "lo": 1.13,
+     "hi": 1.18,
+     "n": 64
+    }
+   },
+   "Qwen3-4B": {
+    "n54": {
+     "bytes_per_record": 144.0,
+     "ratio_vs_h54": 0.92,
+     "lo": 0.9,
+     "hi": 0.94,
+     "n": 64
+    },
+    "n44": {
+     "bytes_per_record": 128.0,
+     "ratio_vs_h54": 1.0,
+     "lo": 0.98,
+     "hi": 1.02,
+     "n": 64
+    },
+    "n43": {
+     "bytes_per_record": 112.0,
+     "ratio_vs_h54": 1.09,
+     "lo": 1.06,
+     "hi": 1.12,
+     "n": 64
+    },
+    "n33": {
+     "bytes_per_record": 96.0,
+     "ratio_vs_h54": 1.35,
+     "lo": 1.31,
+     "hi": 1.4,
+     "n": 64
+    },
+    "h44": {
+     "bytes_per_record": 136.0,
+     "ratio_vs_h54": 1.11,
+     "lo": 1.08,
+     "hi": 1.13,
+     "n": 64
+    }
+   }
+  }
+ },
+ "fig6": {
+  "source": [
+   "research records, not in this repository: RESULT_ParisKV_RULER128K_20261126.md, section 2 table (128K, 10 tasks x 10 items): TieredKV h54, full attention run 1/2, ParisKV as released and with decode-position fix",
+   "experiments/same_gpu_offload/results/opx_numbers.txt, '[score]' lines for fp, h54, ret018 (RetroInfer 0.018), skv2048 (ShadowKV 2048) (130K, 5 tasks x 50 items)"
+  ],
+  "panel_a": {
+   "tasks": [
+    "niah_single_1",
+    "niah_single_2",
+    "niah_multikey_1",
+    "niah_multikey_2",
+    "niah_multivalue",
+    "niah_multiquery",
+    "fwe",
+    "qa_1",
+    "qa_2",
+    "vt"
+   ],
+   "rows": {
+    "TieredKV": [
+     100,
+     100,
+     100,
+     100,
+     97.5,
+     97.5,
+     66.7,
+     60,
+     60,
+     80
+    ],
+    "Full attention (run 1)": [
+     100,
+     100,
+     100,
+     100,
+     97.5,
+     97.5,
+     70.0,
+     60,
+     60,
+     88
+    ],
+    "Full attention (run 2)": [
+     100,
+     100,
+     100,
+     100,
+     97.5,
+     97.5,
+     76.7,
+     60,
+     60,
+     88
+    ],
+    "ParisKV": [
+     100,
+     100,
+     100,
+     90,
+     97.5,
+     95,
+     63.3,
+     50,
+     60,
+     58
+    ],
+    "ParisKV (position fix)": [
+     100,
+     100,
+     100,
+     90,
+     97.5,
+     97.5,
+     63.3,
+     50,
+     60,
+     54
+    ]
+   },
+   "avg": {
+    "TieredKV": 86.17,
+    "Full attention (run 1)": 87.3,
+    "Full attention (run 2)": 87.97,
+    "ParisKV": 81.38,
+    "ParisKV (position fix)": 81.23
+   }
+  },
+  "panel_b": {
+   "tasks": [
+    "vt",
+    "cwe",
+    "fwe",
+    "qa_1",
+    "qa_2"
+   ],
+   "rows": {
+    "Full attention": {
+     "scores": [
+      74.4,
+      0.4,
+      66.0,
+      70.0,
+      46.0
+     ],
+     "avg": 51.36
+    },
+    "TieredKV": {
+     "scores": [
+      76.0,
+      1.0,
+      69.3,
+      74.0,
+      48.0
+     ],
+     "avg": 53.67
+    },
+    "RetroInfer": {
+     "scores": [
+      73.6,
+      4.2,
+      64.7,
+      78.0,
+      46.0
+     ],
+     "avg": 53.29
+    },
+    "ShadowKV": {
+     "scores": [
+      71.2,
+      0.0,
+      60.0,
+      70.0,
+      50.0
+     ],
+     "avg": 50.24
+    }
+   }
+  }
+ },
+ "fig7": {
+  "source": [
+   "experiments/ruler_vs_full/README.md, Results table (RULER 32K 13 tasks, 128K 8 NIAH, 128K 10 tasks; ours minus full attention run 1 / run 2, paired bootstrap 95% CI)",
+   "research records, not in this repository: ours_arm_analysis_20261126.md, results table (YAKV benchmark, 8B)",
+   "experiments/same_gpu_offload/results/opx_numbers.txt, '[paired]' lines h54 - fp, h54 - skv2048, h54 - ret018",
+   "research records, not in this repository: ffd_fg_result_20261126.md, section 'Ours vs FFD on the same 129 items' (paired differences)",
+   "research records, not in this repository: RESULT_ParisKV_RULER128K_20261126.md, paired table (ours minus ParisKV with position fix)"
+  ],
+  "vs_full": [
+   {
+    "label": "RULER 32K\n13 tasks, n=130",
+    "run1": [
+     0.1,
+     -0.31,
+     0.69
+    ],
+    "run2": [
+     0.87,
+     -0.23,
+     2.74
+    ]
+   },
+   {
+    "label": "RULER 128K\n8 NIAH tasks, n=80",
+    "run1": [
+     -1.25,
+     -3.75,
+     0.0
+    ],
+    "run2": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "note": "run 2: identical on 80/80 items, so the interval is degenerate"
+   },
+   {
+    "label": "RULER 128K\n10 tasks, n=100",
+    "run1": [
+     -1.13,
+     -3.6,
+     0.67
+    ],
+    "run2": [
+     -1.8,
+     -4.27,
+     0.0
+    ]
+   },
+   {
+    "label": "YAKV MultiNeedle\n128K, n=100",
+    "run1": [
+     -0.18,
+     -0.73,
+     0.36
+    ]
+   },
+   {
+    "label": "YAKV Text2JSON\nfirst 150",
+    "run1": [
+     -0.02,
+     -2.89,
+     2.93
+    ]
+   },
+   {
+    "label": "YAKV LongProc\nhtml_to_tsv 8K, n=120",
+    "run1": [
+     1.16,
+     -0.48,
+     3.36
+    ]
+   },
+   {
+    "label": "RULER 130K\n5 tasks, n=250",
+    "run1": [
+     2.31,
+     0.53,
+     4.33
+    ]
+   }
+  ],
+  "vs_competitors": [
+   {
+    "label": "FFD d5 (RULER 32K)",
+    "v": [
+     8.4,
+     4.7,
+     12.2
+    ]
+   },
+   {
+    "label": "FFD d7 (RULER 32K)",
+    "v": [
+     2.4,
+     -0.5,
+     5.4
+    ]
+   },
+   {
+    "label": "ParisKV (RULER 128K)",
+    "v": [
+     4.93,
+     0.77,
+     9.62
+    ]
+   },
+   {
+    "label": "ShadowKV 2048 (RULER 130K)",
+    "v": [
+     3.43,
+     0.73,
+     6.08
+    ]
+   },
+   {
+    "label": "RetroInfer 0.018 (RULER 130K)",
+    "v": [
+     0.37,
+     -2.39,
+     3.0
+    ]
+   }
+  ]
+ }
+}
