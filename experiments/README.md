@@ -1,12 +1,13 @@
-# Experiments
+# Experiments overview
 
-Each directory contains:
+Each subdirectory is one study and contains:
 - the scripts of the formal run (identical to the run versions apart from comments and license headers; see
   [`docs/provenance.tsv`](../docs/provenance.tsv));
 - the analysis script;
-- the analysis output.
+- the analysis outputs.
 
-Comparisons are paired per item (or per model) and reported with a bootstrap or rank-test interval.
+All comparisons are paired per item (or per model) and reported with bootstrap or rank-test confidence intervals. Setup
+and rerun instructions are in [`docs/reproduction.md`](../docs/reproduction.md).
 
 | Directory | Question | Main result | Hardware |
 |---|---|---|---|
@@ -14,7 +15,7 @@ Comparisons are paired per item (or per model) and reported with a bootstrap or 
 | [`ablation_nab2`](ablation_nab2) | Where the fidelity comes from | content-blind candidates: 31-46x higher KL; key-only correction: 8-10x | RTX 4090 |
 | [`ladder_l1`](ladder_l1) | Against SpeCache-style exact-row fetch at the same PCIe bytes | KL 0.37x, 16/16 models; exact-attention selection 2.3x worse | RTX PRO 5000 |
 | [`base_alignment`](base_alignment) | Is the GPU base on par with published 2-bit bases | not shown better than Block-GTQ (median 0.91 [0.78, 1.10]); better than RotateKV on 18/18 | RTX PRO 5000 |
-| [`real_engine`](real_engine) | Does the real engine reproduce the reference, and how does it score at 130K | +8.9 over KIVI-128 | RTX PRO 5000 |
+| [`real_engine`](real_engine) | Does the real engine reproduce the reference, and how does it score at 130K | +8.9 points over KIVI-128 on 130K RULER | RTX PRO 5000 |
 | [`ruler_vs_full`](ruler_vs_full) | Does the tiered cache change RULER answers against vLLM full attention | 128K NIAH: identical to a full-attention run on 80/80 items; 32K, 13 tasks: +0.10 [-0.31, +0.69] | RTX PRO 5000 |
 | [`residual_coding`](residual_coding) | Residuals coded in units of the stored base step | 16% fewer host bytes (128 B) at KL ratio 1.00 [0.98, 1.02] | RTX PRO 5000 |
 | [`same_gpu_offload`](same_gpu_offload) | PCIe, host memory, latency and accuracy against ShadowKV and RetroInfer | 7-22% of ShadowKV's and 5-55% of RetroInfer's PCIe bytes per step; about 30% of their pinned host memory | RTX 4090, RTX PRO 5000 |
@@ -23,9 +24,9 @@ Comparisons are paired per item (or per model) and reported with a bootstrap or 
 | [`read_path`](read_path) | Cost of reading residual rows from host memory, and of correcting on the CPU | 2 MB huge pages: per-row reads 1.9-5x faster on the RTX 4090 host | RTX 4090, RTX 5090 D |
 | [`host_memory_model`](host_memory_model) | Host memory vs per-step time, as a roofline / Pareto model | analytic model, calibrated on RTX 4090 profiles | CPU |
 
-## Notation
+## Notation reference
 
-| Term | Meaning |
+| Symbol / tag | Meaning |
 |---|---|
 | `kivi128` | KIVI-style 2-bit base (keys per channel, values per token) with a 128-token FP16 window and 4 exact sinks |
 | `stkm8v8128` | the stack base of the default configuration (keys split by RoPE-pair importance into 3-bit and 1-bit halves, 8-bit metadata) |
