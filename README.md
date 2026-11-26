@@ -42,8 +42,11 @@ recent window stay exact on the GPU.
 | Same PCIe bytes as exact-row fetch | KL is 0.37x that of SpeCache-style fetch on a common base, lower on 16/16 models. | [ladder_l1](experiments/ladder_l1) |
 | Which rows to correct | Selecting rows by exact attention (the sparse-fetch rule) is 2.3x worse than using the base's own scores, on 16/16 models. | [ladder_l1](experiments/ladder_l1) |
 | Against offloading systems at 130K | On the same RTX 4090: 7-22% of ShadowKV's and 5-55% of RetroInfer's PCIe bytes per step, and about 30% of their pinned host memory. Accuracy, each system in its own environment: 3-4 points above ShadowKV (budgets 1024-4096) and within RetroInfer's interval (Llama-3.1-8B, RULER, 250 items). | [same_gpu_offload](experiments/same_gpu_offload) |
-| 130K context, real engine | 71.4 vs. 72.7 at full precision (no difference detected); +8.9 [+1.6, +16.3] points over KIVI-128 on the same machine (Llama-3.1-8B, RULER). | [real_engine](experiments/real_engine) |
+| RULER against full attention | 128K, 8 NIAH tasks: 91.88 vs. 93.12 / 91.88 for two full-attention runs, identical to the second run on 80/80 items. 32K, all 13 tasks: 90.74 vs. 90.64, +0.10 [-0.31, +0.69] (Llama-3.1-8B, same token ids). | [ruler_vs_full](experiments/ruler_vs_full) |
+| 130K context, real engine | +8.9 [+1.6, +16.3] points over KIVI-128 on the same machine (Llama-3.1-8B, RULER). | [real_engine](experiments/real_engine) |
 | Host memory | Demoting cold host rows by attention score cuts host bytes by 13-16% at 1.05-1.07x the reasoning-span KL of the full store (Qwen3 0.6B-4B). | [demotion_t4](experiments/demotion_t4) |
+| Residual coding | Coding residuals in units of the stored base step needs no per-token metadata: 16% fewer host bytes (128 B) with no KL difference detected, 1.00 [0.98, 1.02] (Qwen3 0.6B and 4B). | [residual_coding](experiments/residual_coding) |
+| Recent methods (in progress) | Same-GPU comparisons with YAKV and ParisKV on their own benchmarks are running. YAKV smoke test (5 items per set): Text2JSON 40.4 vs. 20.0 for YAKV, MultiNeedle-128K equal (94.6), 8.1 MB PCIe per decode step at 125K. | - |
 
 ## How it works
 
