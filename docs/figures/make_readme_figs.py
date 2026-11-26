@@ -226,41 +226,71 @@ def fig_frontier() -> None:
 # --------------------------------------------------------------------------------------
 def fig_residual() -> None:
     models = DATA["fig5"]["models"]
-    fig, axes = plt.subplots(1, 2, figsize=(6.4, 2.9), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.5), sharey=True)
     split = {"n54": "5+4", "n44": "4+4", "n43": "4+3", "n33": "3+3"}
-    for ax, (mname, d) in zip(axes, models.items()):
+    ref_bytes, ref_kl = 152.0, 1.0  # h54 by definition
+    for ax, tag, (mname, d) in zip(axes, "ab", models.items()):
         ks = ["n33", "n43", "n44", "n54"]
-        xs = [d[k]["bytes_per_record"] for k in ks]
-        ys = [d[k]["ratio_vs_h54"] for k in ks]
-        ax.axhline(1.0, color="#444444", lw=1, ls=":", zorder=1)
-        ax.errorbar(xs, ys, yerr=[[d[k]["ratio_vs_h54"] - d[k]["lo"] for k in ks],
-                                  [d[k]["hi"] - d[k]["ratio_vs_h54"] for k in ks]],
-                    color=GREEN, marker="o", lw=2, ms=6, mec="black", mew=0.7, capsize=2.5, zorder=4)
-        for k in ks:
-            ax.annotate(split[k], (d[k]["bytes_per_record"], d[k]["ratio_vs_h54"]),
-                        textcoords="offset points", xytext=(11, 6), ha="center", fontsize=7.5,
-                        color="#444444")
+        xs = np.array([d[k]["bytes_per_record"] for k in ks])
+        ys = np.array([d[k]["ratio_vs_h54"] for k in ks])
+        lo = np.array([d[k]["lo"] for k in ks])
+        hi = np.array([d[k]["hi"] for k in ks])
+        # better / worse than h54 regions
+        ax.axhspan(0.80, ref_kl, color=GREEN, alpha=0.07, lw=0, zorder=0)
+        ax.axhline(ref_kl, color="#333333", lw=1.0, ls=(0, (4, 3)), zorder=1)
+        ax.text(91.5, 0.875, "better than h54", fontsize=8, color=GREEN, style="italic", va="center")
+        ax.text(91.5, 1.035, "worse than h54", fontsize=8, color="#777777", style="italic", va="center")
+        # measured curve with its 95% CI band
+        ax.fill_between(xs, lo, hi, color=GREEN, alpha=0.22, lw=0, zorder=2)
+        ax.errorbar(xs, ys, yerr=[ys - lo, hi - ys], color=GREEN, lw=2.4, marker="o", ms=8,
+                    mfc=GREEN, mec="white", mew=1.4, ecolor="#00664a", elinewidth=1.1, capsize=3,
+                    zorder=4)
+        for k, x, y in zip(ks, xs, ys):
+            ax.annotate(split[k], (x, y), textcoords="offset points",
+                        xytext={"n33": (16, 4), "n44": (-15, -14)}.get(k, (0, 11)),
+                        ha="center", fontsize=8.5,
+                        fontweight="bold", color="#1a1a1a",
+                        bbox=dict(boxstyle="round,pad=0.18", fc="white", ec="none", alpha=0.85),
+                        zorder=6)
+        # previous coding at the same bit split, and the step-normalized replacement
         o = d["h44"]
         ax.errorbar([o["bytes_per_record"]], [o["ratio_vs_h54"]],
                     yerr=[[o["ratio_vs_h54"] - o["lo"]], [o["hi"] - o["ratio_vs_h54"]]],
-                    color=ORANGE, marker="s", ms=7, mec="black", mew=0.8, capsize=2.5, ls="none",
-                    zorder=5)
-        ax.plot([152], [1.0], marker="*", color=GRAY, ms=11, mec="black", mew=0.7, ls="none", zorder=5)
-        ax.set_title(mname)
-        ax.set_xlabel("Host bytes per record")
-        ax.set_xticks([96, 112, 128, 144, 152])
+                    color=ORANGE, marker="s", ms=8, mec="black", mew=0.9, ecolor="#a86f00",
+                    capsize=3, ls="none", zorder=5)
+        n44 = d["n44"]
+        ax.annotate("", xy=(n44["bytes_per_record"] + 1.0, n44["ratio_vs_h54"] + 0.018),
+                    xytext=(o["bytes_per_record"] - 0.6, o["ratio_vs_h54"] - 0.03),
+                    arrowprops=dict(arrowstyle="-|>", color="#a86f00", lw=1.3,
+                                    connectionstyle="arc3,rad=0.25", mutation_scale=11), zorder=5)
+        ax.text(o["bytes_per_record"] + 2.0, o["ratio_vs_h54"] + 0.035, "previous 4+4",
+                fontsize=8, color="#a86f00", ha="left", fontweight="bold")
+        # bytes saved at equal KL: 4+4 vs h54
+        ax.plot([ref_bytes], [ref_kl], marker="*", color=GRAY, ms=15, mec="black", mew=0.8,
+                ls="none", zorder=6)
+        yb = 0.84
+        ax.annotate("", xy=(n44["bytes_per_record"], yb), xytext=(ref_bytes, yb),
+                    arrowprops=dict(arrowstyle="<|-|>", color="#333333", lw=1.1,
+                                    mutation_scale=9))
+        pct = 100 * (n44["bytes_per_record"] - ref_bytes) / ref_bytes
+        ax.text((n44["bytes_per_record"] + ref_bytes) / 2, yb + 0.018, f"{pct:.0f}% bytes",
+                ha="center", fontsize=8.5, fontweight="bold", color="#333333")
+        ax.set_title(f"({tag}) {mname}", fontsize=11)
+        ax.set_xlabel("Host bytes per record", fontsize=10)
+        ax.set_xticks([96, 112, 128, 136, 144, 152])
+        ax.tick_params(labelsize=9)
         ax.set_xlim(90, 158)
-        ax.set_ylim(0.85, 1.5)
+        ax.set_ylim(0.80, 1.47)
         ax.grid(axis="x", visible=False)
-    axes[0].set_ylabel("KL ratio to h54")
-    handles = [Line2D([], [], color=GREEN, marker="o", lw=2, ms=6, mec="black",
-                      label="Step-normalized coding (key+value bits)"),
-               Line2D([], [], color=ORANGE, marker="s", ms=7, mec="black", ls="none",
+    axes[0].set_ylabel("KL ratio to h54", fontsize=10)
+    handles = [Line2D([], [], color=GREEN, marker="o", lw=2.4, ms=8, mec="white", mew=1.4,
+                      label="Step-normalized coding (key+value bits), 95% CI"),
+               Line2D([], [], color=ORANGE, marker="s", ms=8, mec="black", ls="none",
                       label="Previous coding, 4+4"),
-               Line2D([], [], color=GRAY, marker="*", ms=10, mec="black", ls="none",
-                      label="h54 (reference)")]
-    fig.legend(handles=handles, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 1.09),
-               columnspacing=1.2, handletextpad=0.4)
+               Line2D([], [], color=GRAY, marker="*", ms=13, mec="black", ls="none",
+                      label="h54 (reference, 152 B)")]
+    fig.legend(handles=handles, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 1.07),
+               columnspacing=1.2, handletextpad=0.4, fontsize=8.5)
     fig.tight_layout()
     _save(fig, "fig_residual_coding.png")
 
